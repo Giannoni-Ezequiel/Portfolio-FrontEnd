@@ -1,10 +1,12 @@
 .row{
     padding: 20px;
+    background: rgb(255,255,255);
+background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(147,147,249,1) 100%);
 
 }
 
 .div {
-    background: #f5f5f5;
+    text-align: center;
 }
 
 h1, h3{
