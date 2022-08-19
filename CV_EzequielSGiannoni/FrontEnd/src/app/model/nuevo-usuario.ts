@@ -1,13 +1,17 @@
-export class persona {
-    id: number;
-    nombre: String;
-    apellido: String;
-   
+export class NuevoUsuario 
+{
+    nombre: string;
+    nombreUsuario: string;
+    email: string;
+    password: string;
 
-    constructor(id: number, nombre: String, apellido: String) {
-        this.id = id;
+
+    constructor(nombre: string, nombreUsuario: string, email: string, password: string, ) 
+    {
         this.nombre = nombre;
-        this.apellido = apellido;
-       
+        this.nombreUsuario = nombreUsuario;
+        this.email = email;
+        this.password = password;
+    
     }
 }
