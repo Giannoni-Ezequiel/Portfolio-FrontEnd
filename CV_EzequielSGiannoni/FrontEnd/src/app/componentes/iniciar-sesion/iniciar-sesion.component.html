@@ -17,7 +17,7 @@
     <button class="btn btn-success btn-block" [disabled]="!f.valid">Iniciar Sesión</button>
   </form>
   
-  <button type="button" class="btn btn-light" (click)="portfolio()">Regresar al Home</button>
+  <button type="button" class="btn btn-light" (click)="home()">Regresar al Home</button>
   <div *ngIf="f.submitted && isLoginFail" class="alert alert-danger mt-3">
   Error de login
   </div>    

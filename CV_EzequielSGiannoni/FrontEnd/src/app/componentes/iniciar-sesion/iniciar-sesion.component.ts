@@ -27,7 +27,7 @@ export class IniciarSesionComponent implements OnInit
     private router: Router
   ) {}
 
-    portfolio(){
+    home(){
       this.router.navigate([''])
     }
     

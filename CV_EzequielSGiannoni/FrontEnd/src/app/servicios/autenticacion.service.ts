@@ -7,7 +7,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AutenticacionService {
-  url="https://bkdprueba95.herokuapp.com/auth/";
+  url="http://localhost:8080/auth/";
   currentUserSubject: BehaviorSubject<any>;
   constructor(private http: HttpClient) { 
     console.log("El servicio de autenticacion esta corriendo");
