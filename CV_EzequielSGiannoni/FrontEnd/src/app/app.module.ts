@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { IniciarSesionComponent } from './componentes/iniciar-sesion/iniciar-sesion.component';
 import { PortfolioComponent } from './componentes/portfolio/portfolio.component';
-import { PieDePaginaComponent } from './componentes/pie-de-pagina/pie-de-pagina.component';
+
 import { HeaderComponent } from './componentes/header/header.component';
 import { LogoAPComponent } from './componentes/logo-ap/logo-ap.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -20,13 +20,13 @@ import { BannerComponent } from './componentes/banner/banner.component';
 import { AcercaDeComponent } from './componentes/acerca-de/acerca-de.component';
 import { HysComponent } from './componentes/hys/hys.component';
 import { FormsModule } from '@angular/forms';
+import { ContactoComponent } from './componentes/contacto/contacto.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     IniciarSesionComponent,
     PortfolioComponent,
-    PieDePaginaComponent,
     HeaderComponent,
     FooterComponent,
     BannerComponent,
@@ -36,6 +36,7 @@ import { FormsModule } from '@angular/forms';
     LogoAPComponent,
     AcercaDeComponent,
     ExperienciaComponent,
+    ContactoComponent,
   ],
   imports: [
     BrowserModule,
