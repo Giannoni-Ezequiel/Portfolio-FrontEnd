@@ -1,0 +1,26 @@
+<div class="card.body">
+      <form #f="ngForm" (ngSubmit)="onLogin()" novalidate>
+      <!-- Email input -->
+    <div class="form-outline mb-4">
+      <label for="nombreUsuario">Nombre Usuario</label>
+      <input type="text" name="nombreUsuario" id="nombreUsuario" class="form-control"
+      [(ngModel)] = "nombreUsuario" required>
+    </div>
+  
+    <!-- Password input -->
+    <div class="form-outline mb-4">
+      <label for="password">Contraseña</label>
+      <input type="password" name="password" id="password" class="form-control"
+      [(ngModel)] = "password" required>                 
+    </div>
+  
+    <button class="btn btn-success btn-block" [disabled]="!f.valid">Iniciar Sesión</button>
+  </form>
+  
+  <button type="button" class="btn btn-light" (click)="home()">Regresar al Home</button>
+  <div *ngIf="f.submitted && isLoginFail" class="alert alert-danger mt-3">
+  Error de login
+  </div>    
+  </div>
+
+  
