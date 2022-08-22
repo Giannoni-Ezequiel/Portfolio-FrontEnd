@@ -15,17 +15,17 @@ export class PersonaService
 
     public getPersonas(): Observable<Persona[]>
     {
-      return this.http.get<Persona[]>(`${this.apiServerUrl}/persona/all`);
+      return this.http.get<Persona[]>(`${this.apiServerUrl}persona/all`);
     }
 
     public addPersona(persona: Persona): Observable<Persona> 
     {
-      return this.http.post<Persona>(`${this.apiServerUrl}/persona/add`, persona);
+      return this.http.post<Persona>(`${this.apiServerUrl}persona/add`, persona);
     } 
 
     public updatePersona(persona: Persona): Observable<Persona> 
     {
-      return this.http.put<Persona>(`${this.apiServerUrl}/persona/update`, persona);
+      return this.http.put<Persona>(`${this.apiServerUrl}persona/update`, persona);
     }
 
     public deletePersona(personaId: number): Observable<void> 
