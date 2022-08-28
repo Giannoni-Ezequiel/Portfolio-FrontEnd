@@ -1,6 +1,7 @@
 {
   "name": "cv-ezequiel-sgiannoni",
   "version": "0.0.0",
+  "main": "index.html",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
