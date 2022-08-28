@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  apiBaseUrl: 'https://bkdprueba95.herokuapp.com/',
+  apiAuthUrl: 'https://bkdprueba95.herokuapp.com/auth/',
 };

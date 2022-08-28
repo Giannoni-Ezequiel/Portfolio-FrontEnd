@@ -57,8 +57,8 @@ Las tecnologias software que estoy trabajando en este proyecto son:
 ## Personas desarrolladores
 
 | [<img src="" width=115><br><sub>Colaborador1</sub>] 
-| [<img src="" width=115><br><sub>Colaborador2</sub>]url github  
-| [<img src="" width=115><br><sub>Colaborador3</sub>]url github 
-|
+| [<img src="" width=115><br><sub>Colaborador2</sub>]urlgit  
+| [<img src="" width=115><br><sub>Colaborador3</sub>]urlgit 
+
 | :---: | :---: | :---: |
 

@@ -21,7 +21,7 @@ import { AcercaDeComponent } from './componentes/acerca-de/acerca-de.component';
 import { HysComponent } from './componentes/hys/hys.component';
 import { FormsModule } from '@angular/forms';
 import { ContactoComponent } from './componentes/contacto/contacto.component';
-import { Login2Component } from './componentes/login2/login2.component';
+
 
 @NgModule({
   declarations: [
@@ -38,7 +38,7 @@ import { Login2Component } from './componentes/login2/login2.component';
     AcercaDeComponent,
     ExperienciaComponent,
     ContactoComponent,
-    Login2Component,
+    
   ],
   imports: [
     BrowserModule,
