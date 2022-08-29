@@ -22,3 +22,73 @@ h3
 {border: none;border-bottom: 2px solid #262626;outline: none;height: 40px;color: #fff;background: transparent;font-size: 16px;padding-left: 20px;box-sizing: border-box}.loginBox input[type="text"]:hover, .loginBox input[type="password"]:hover{color: #42F3FA;border: 1px solid #42F3FA;box-shadow: 0 0 5px rgba(0,255,0,.3), 0 0 10px rgba(0,255,0,.2), 0 0 15px rgba(0,255,0,.1), 0 2px 0 black}.loginBox input[type="text"]:focus, .loginBox input[type="password"]:focus{border-bottom: 2px solid #42F3FA}.inputBox{position: relative}.inputBox span{position: absolute;top: 10px;color: #262626}.loginBox input[type="submit"]{border: none;outline: none;height: 40px;font-size: 16px;background: #59238F;color: #fff;border-radius: 20px;cursor: pointer}.loginBox a{color: #262626;font-size: 14px;font-weight: bold;text-decoration: none;text-align: center;display: block}
 a:hover{color: #00ffff}p{color: #0000ff}
 */
+
+section 
+{
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, #f7f7fe, #dff1ff);
+}
+
+    .colour 
+    {
+        position: absolute;
+        filter: blur(150px);
+
+    }
+    .colour:nth-child(1)
+    {
+        top: -350px;
+        width: 600px;
+        height: 600px;
+        background: #bf4ad4;
+    }
+    .colour:nth-child(2)
+    {
+        left: 100px;
+        width: 500px;
+        height: 500px;
+        bottom: -150px;
+        background: #ffa500;
+    }
+    .colour:nth-child(3)
+    {
+        right: 100px;
+        bottom: 50px;
+        width: 300px;
+        height: 300px;
+        background: #2b67f3;
+    }
+    .container
+    {
+        width: 400px;
+        min-height: 200px;
+        border-radius: 10px;
+        backdrop-filter: blur(5px);
+        background: rgba(255, 255, 255, 0.1);
+        box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        border-right: 1px solid rgba(255, 255, 255, 0.2);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .form
+    {
+        width: 100%;
+        height: 100%;
+        padding: 40px;
+    }
+    .form .btn 
+    {
+        width: 60%;
+        margin-bottom: 20px;
+        color: #666;
+        cursor: pointer;
+        background: #fff;
+        font-weight: 600;
+        display: flex;
+        justify-content: center;
+        margin-left: 20%;
+    }
