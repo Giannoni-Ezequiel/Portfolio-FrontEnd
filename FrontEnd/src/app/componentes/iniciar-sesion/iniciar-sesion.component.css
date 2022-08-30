@@ -23,7 +23,7 @@ h3
 a:hover{color: #00ffff}p{color: #0000ff}
 */
 
-section 
+    section 
 {
     display: flex;
     min-height: 100vh;
@@ -82,13 +82,44 @@ section
     }
     .form .btn 
     {
-        width: 60%;
+        width: 70%;
         margin-bottom: 20px;
-        color: #666;
+        color: #fff;
         cursor: pointer;
-        background: #fff;
+        
         font-weight: 600;
         display: flex;
         justify-content: center;
-        margin-left: 20%;
+        margin-left: 15%;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        outline: 2px solid #fff;
+        position: relative;
+        overflow: hidden;
+        transition: color 1s;
+    }
+
+    .form .btn:hover 
+    {
+        color:#f32b67;
+    }
+
+    .form .btn::before
+    {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -50px;
+        width: 0;
+        height: 100%;
+        background-color: #fff;
+        transform: skewX(35deg);
+        z-index: -1;
+        transition: width 1s;
+    }
+    
+    .form .btn:hover::before
+    {
+        width: 150%;
     }

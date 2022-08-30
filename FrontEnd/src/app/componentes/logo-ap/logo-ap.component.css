@@ -1,37 +1,38 @@
-#logoAP{
+#logoAP {
     width: 150px;
 }
 
-img{
+img {
     width: 50px;
+    margin-right: 0.5em;
+    justify-content: space-evenly;
 }
 
 .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
 }
 
-.redes{
-    margin-right: 0.5em;
-}
-
-.btn{
+button {
     border-width: medium;
 }
 
 /*--Celular--*/
-@media (max-width: 575px){
-    .container{
+@media (max-width: 575px) {
+    .container {
         flex-direction: column;
     }
-    .redes{
+
+    .redes {
         display: flex;
         flex-direction: column;
         align-items: center;
-    
+
     }
-    .redes img{
+
+    .redes img {
         margin: 0.2em;
     }
 }
