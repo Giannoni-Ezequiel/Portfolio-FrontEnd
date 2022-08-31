@@ -9,18 +9,18 @@ import { environment } from 'src/environments/environment';
 })
 export class PersonaService 
 {
-  private apiServerUrl = environment.apiBaseUrl;
+  private apiServerUrl = 'https://bkdprueba95.herokuapp.com/';
 
     constructor(private http: HttpClient) { }
 
     public getPersonas(): Observable<Persona[]>
     {
-      return this.http.get<Persona[]>(`${this.apiServerUrl}persona/all`);
+      return this.http.get<Persona[]>(`${this.apiServerUrl}persona/ver`);
     }
 
     public addPersona(persona: Persona): Observable<Persona> 
     {
-      return this.http.post<Persona>(`${this.apiServerUrl}persona/add`, persona);
+      return this.http.post<Persona>(`${this.apiServerUrl}persona/crear`, persona);
     } 
 
     public updatePersona(persona: Persona): Observable<Persona> 
