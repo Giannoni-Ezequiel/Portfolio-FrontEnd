@@ -42,11 +42,11 @@ h1 {
 @media (min-width: 576px){
     #fotodeperfil{
         position: absolute;
-        width: 12%;
+        width: 15%;
         border-radius: 100%;
         box-shadow: 3px 3px 3px grey;
-        left: 3%;
-        top: 150px;
+        left: 1%;
+        top: 98px;
         /*font-weight: bold;*/
         margin-top: 250px;
     }
@@ -54,7 +54,7 @@ h1 {
 @media (width: 575.20px){
     #fotodeperfil{
         /*position: absolute;*/
-        width: 50%;
+        width: 37%;
         border-radius: 100%;
         box-shadow: 4px 4px 4px grey;
         left: 33%;
@@ -64,12 +64,13 @@ h1 {
         display: block;
         margin-left: auto;
         margin-right: auto;
+        margin-top: -184px;
     }
 }
 @media (max-width: 575px){
     #fotodeperfil{
         /*position: absolute;*/
-        width: 50%;
+        width: 37%;
         border-radius: 100%;
         box-shadow: 4px 4px 4px grey;
         left: 33%;
@@ -79,6 +80,7 @@ h1 {
         display: block;
         margin-left: auto;
         margin-right: auto;
+        margin-top: -184px;
     }
     #nombre {
         text-align: center;

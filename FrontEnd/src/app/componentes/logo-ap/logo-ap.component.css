@@ -17,6 +17,7 @@ img {
 
 button {
     border-width: medium;
+    
 }
 
 /*--Celular--*/
@@ -34,5 +35,9 @@ button {
 
     .redes img {
         margin: 0.2em;
+    }
+
+    .redes .button {
+        justify-content: space-evenly;
     }
 }
