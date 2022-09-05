@@ -27,7 +27,7 @@
 - [Licencia](#licencia)
 
 - [Conclusión](#conclusión)
-
+ # Título-e-imagen-de-portada
  # Acerca del proyecto
 
 Las tecnologias software que estoy trabajando en este proyecto son: 
@@ -39,7 +39,7 @@ Las tecnologias software que estoy trabajando en este proyecto son:
    <img src="https://img.shields.io/badge/STATUS-EN%20DESAROLLO-green">
    </p>
 
-# :hammer:Funcionalidades del proyecto
+# :hammer:Características-de-la-aplicación-y-demostración
 
 - `Funcionalidad 1`: descripción de la funcionalidad 1
 - `Funcionalidad 2`: descripción de la funcionalidad 2
@@ -54,6 +54,8 @@ Las tecnologias software que estoy trabajando en este proyecto son:
 -  Java
 -  MySQL
 
+# personas-contribuyentes
+
 ## Personas desarrolladores
 
 | [<img src="" width=115><br><sub>Colaborador1</sub>] 
@@ -62,3 +64,6 @@ Las tecnologias software que estoy trabajando en este proyecto son:
 
 | :---: | :---: | :---: |
 
+# licencia
+
+# conclusión
