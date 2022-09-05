@@ -29,7 +29,7 @@
 - [Conclusión](#conclusión)
  # Título-e-imagen-de-portada
  
- | [<img src="" width=115>] 
+
  ![Captura de pantalla 2022-09-05 201850](https://user-images.githubusercontent.com/82993315/188520084-15c2db2d-39f5-45d9-aebe-04051ade2281.jpg)
  
  # Acerca del proyecto
@@ -61,12 +61,6 @@ Las tecnologias software que estoy trabajando en este proyecto son:
 # personas-contribuyentes
 
 ## Personas desarrolladores
-
-| [<img src="" width=115><br><sub>Colaborador1</sub>] 
-| [<img src="" width=115><br><sub>Colaborador2</sub>]urlgit  
-| [<img src="" width=115><br><sub>Colaborador3</sub>]urlgit 
-
-| :---: | :---: | :---: |
 
 # licencia
 
