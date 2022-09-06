@@ -12,8 +12,9 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+   
 }
+
 
 button {
     border-width: medium;
@@ -23,6 +24,7 @@ button {
 /*--Celular--*/
 @media (max-width: 575px) {
     .container {
+        
         flex-direction: column;
     }
 
