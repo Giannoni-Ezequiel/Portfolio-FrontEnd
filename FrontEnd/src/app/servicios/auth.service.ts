@@ -15,19 +15,15 @@ import { NuevoUsuario } from '../model/nuevo-usuario';
     
     private url = environment.apiBaseUrl;
   
-  
-  
     constructor(private httpClient: HttpClient) { }
   
     public nuevo(nuevoUsuario: NuevoUsuario): Observable<any>
     {
       return this.httpClient.post<any>(this.url + 'nuevo', nuevoUsuario);
-      
-    }
+      } 
   
     public login(loginUsuario: LoginUsuario): Observable<Jwt>
     {
       return this.httpClient.post<Jwt>(this.url + 'login', loginUsuario);
-      
+      }
     }
-  }

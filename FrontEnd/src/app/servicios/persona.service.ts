@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/internal/Observable';
 import { Persona } from '../model/persona.interface';
-import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -32,4 +31,5 @@ export class PersonaService
     {
       return this.http.delete<void>(`${this.apiServerUrl}/persona/delete/${personaId}`);
     }
-}
+
+  }

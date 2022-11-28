@@ -1,39 +1,71 @@
 <div class="row">
-    <h2>Experiencia laboral</h2>
-    <div class="col-lg-11">
-    <ul>
-        <li>
-            <h3>HELP DESK N1</h3> - 
-            <h4>2022</h4>
-        </li>
-            <p>
-                Pixel It Solutions
-                ABM. Atención telefonica. Resolución de incidencias (VPN)
-            </p>
-        </ul>
-        <ul>
-        <li>
-            <h3>RECSA Callcenter</h3> - 
-            <h4>(years)</h4>
-        </li>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-            Velit aliquid eum unde cum atque, necessitatibus saepe, 
-            iure cumque natus cupiditate accusantium, harum pariatur modi 
-            quos consequuntur ab tempore nam explicabo.
-        </p>
-        </ul>
-        <ul>
-        <li>
-                <h3>STARBUCKS Coffee</h3> - 
-                <h4>(years)</h4>
-        </li>
-        <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-        Velit aliquid eum unde cum atque, necessitatibus saepe, 
-        iure cumque natus cupiditate accusantium, harum pariatur modi 
-        quos consequuntur ab tempore nam explicabo.
-        </p>
-        </ul>
+    <p>
+        <a class="btn btn-primary" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
+                <h2>Experiencia laboral</h2>
+        </a>
+    </p>
+    <div class="row">
+        <div class="col">
+            <div class="collapse multi-collapse" id="multiCollapseExample1">
+                <div class="card card-body">
+                    <ul>
+                        <li>
+                            <h3>HELP DESK N1</h3> - 
+                            <h4>2022</h4>
+                        </li>
+                            <p>
+                                Pixel It Solutions
+                                ABM. Atención telefonica. Resolución de incidencias (VPN)
+                            </p>
+                    </ul>
+                    <ul>
+                        <li>
+                            <h3>RECSA Callcenter</h3> - 
+                            <h4>(years)</h4>
+                        </li>
+                            <p>
+                            </p>
+                    </ul>
+                    <ul>
+                        <li>
+                            <h3>STARBUCKS Coffee</h3> - 
+                            <h4>(years)</h4>
+                        </li>
+                            <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                                        Velit aliquid eum unde cum atque, necessitatibus saepe, 
+                                        iure cumque natus cupiditate accusantium, harum pariatur modi 
+                                        quos consequuntur ab tempore nam explicabo.
+                            </p>
+                    </ul>
+                        
+                    <div class="col-lg-2">
+                            <button type="button" class="btn btn-outline-light" routerLink="/nuevaedu" *ngIf="isLogged">
+                                + Agregar Experiencia
+                            </button>
+                        </div>
+                    <div class="col lg 1">
+                        </div>
+                    <div class="col-lg-11">
+                            <table class="table">
+                                <tbody>
+                                <tr *ngFor="let Experiencia of experiencia">
+                                    <td>
+                                    <h2>{{Experiencia.nombre_empresa}}</h2></td>
+                                    <td>{{Experiencia.descripcion}}</td>
+                                    <td *ngIf="isLogged">
+                                    <button class="btn btn-outline-light" routerLink="/editedu/{{Experiencia.id}}">
+                                        <i class="bi bi-pencil-square"></i> EDITAR</button>
+                                    </td>
+                                    <td *ngIf=""><button class="btn btn-outline-danger" (click)="delete(Experiencia.id)">
+                                        <i class="bi bi-trash"></i> BORRAR </button>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

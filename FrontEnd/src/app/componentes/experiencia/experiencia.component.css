@@ -1,16 +1,18 @@
-.row
-{
+.row {
     color: #fff;
     padding: 20px;
     background: rgb(20,32,46);
-background: radial-gradient(circle, rgba(20,32,46,1) 30%, rgba(10,19,52,1) 56%, rgba(45,67,86,1) 77%, rgba(137,170,195,1) 98%);
+    background: radial-gradient(circle, rgba(20,32,46,1) 30%, 
+                                        rgba(10,19,52,1) 56%, 
+                                        rgba(45,67,86,1) 77%, 
+                                        rgba(137,170,195,1) 98%);
   }
 
 .div {
     text-align: center;
 }
 
-h1, h3{
+h3, h4 {
     display: inline;
 }
 
@@ -25,7 +27,16 @@ h2 {
     -webkit-text-fill-color: transparent;
     animation: text 7.5s linear infinite;
 }
+
 @keyframes text {
     from { background-position: 0% 50%; }
     to { background-position: 100% 100%; }
 }
+
+.card-body{
+    background: rgb(20,32,46);
+  }
+
+.btn {
+    background: rgb(32, 51, 72);
+  }

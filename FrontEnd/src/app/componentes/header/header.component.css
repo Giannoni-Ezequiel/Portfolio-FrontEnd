@@ -1,11 +1,8 @@
-.row
-    {
+.row {
     background: black
+        }
     
-    }
-    
-app-logo{
-    
+app-logo {
     float: right;
     margin-top: 25px;
-}
+        }
