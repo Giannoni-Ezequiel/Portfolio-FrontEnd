@@ -1,6 +1,6 @@
 export interface Educacion
 {
-    id: number;
+    id?: number;
     lugar: string;
     fecha_inicio: string;
     fecha_fin: string;

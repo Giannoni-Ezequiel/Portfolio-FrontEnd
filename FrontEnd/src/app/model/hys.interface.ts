@@ -1,8 +1,7 @@
 export interface HyS 
 {
-    id: number;
+    id?: number;
     hys: string;
     porcentaje: number;
     img: string;
-
 }

@@ -11,6 +11,5 @@ export class NuevoUsuario
         this.nombreUsuario = nombreUsuario;
         this.email = email;
         this.password = password;
-        
     }
 }

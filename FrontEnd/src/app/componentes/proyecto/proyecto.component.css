@@ -34,8 +34,12 @@ h2 {
     to { background-position: 100% 100%; }
   }
 
+.card {
+  background: rgb(20,32,46);
+}
+  
 .card-body{
-    background: rgb(20,32,46);
+    background: rgb(72, 115, 165);
   }
 
 .btn {

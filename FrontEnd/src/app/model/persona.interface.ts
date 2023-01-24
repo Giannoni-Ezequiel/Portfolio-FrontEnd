@@ -1,6 +1,6 @@
 export interface Persona 
 {
-    id: number;
+    id?: number;
     nombre: String;
     apellido: String;
     titulo: String;
@@ -9,4 +9,6 @@ export interface Persona
     correo: String;
     sobre_mi: String;
     img: String;
+
+    
 }

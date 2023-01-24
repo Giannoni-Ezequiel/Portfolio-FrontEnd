@@ -10,41 +10,81 @@
           <div class="card card-body">
             <ul>
               <li>
-                <h3>BOOTCAMP CRISALIS</h3>
-                <h4>Finnegans | 2022 - 2023</h4>
-                <h3>INGENIERIA EN SISTEMAS DE LA INFORMACION</h3>
-                <h4>Universidad Nacional Tecnologica| 2021 - 2025</h4>
-                <h3>WEB FULL STACK JR JAVA</h3>
-                <h4>Argentina Programa | 2021 - 2022</h4>
-                <h3>HABILIDADES BLANDAS</h3>
-                <h4>Accenture | 2021 - 2021</h4>
-                <h3>TESTING & Q.A.</h3>
-                <h4>Codo a Codo 4.0 | 2021 - 2021</h4>
-                <h3>REPARACION Y ARMADO DE PC</h3>
-                <h4>UTN | 2021 - 2021</h4>
-              </li>
+                    <h3>BOOTCAMP CRISALIS</h3>
+                <!----><br><h5>Finnegans | 2022 - 2023</h5></li>
+                <li><h3>INGENIERIA EN SISTEMAS DE LA INFORMACION</h3>
+                <!----><br><h5>Universidad Nacional Tecnologica| 2021 - 2025</h5></li>
+                <li><h3>WEB FULL STACK JR JAVA</h3>
+          <!----><br><h5>Argentina Programa | 2021 - 2022</h5></li>
+                        <h3><i>Tecnologias</i></h3>
+                          <p align="left"> 
+                            <a href="https://angular.io" target="_blank" rel="noreferrer"> 
+                            <img src="https://angular.io/assets/images/logos/angular/angular.svg" alt="angular" width="40" height="40"/> 
+                              </a> 
+                            <a href="https://getbootstrap.com" target="_blank" rel="noreferrer"> 
+                              <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg" alt="bootstrap" width="40" height="40"/>       
+                            </a> 
+                            <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> 
+                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/>
+                              </a> 
+                            <a href="https://firebase.google.com/" target="_blank" rel="noreferrer"> 
+                            <img src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg" alt="firebase" width="40" height="40"/> 
+                              </a> 
+                            <a href="https://heroku.com" target="_blank" rel="noreferrer"> 
+                            <img src="https://www.vectorlogo.zone/logos/heroku/heroku-icon.svg" alt="heroku" width="40" height="40"/> 
+                              </a> 
+                            <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> 
+                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> 
+                              </a> 
+                            <a href="https://www.java.com" target="_blank" rel="noreferrer"> 
+                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="java" width="40" height="40"/> 
+                              </a> 
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> 
+                              <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/>         
+                            </a> 
+                            <a href="https://www.mysql.com/" target="_blank" rel="noreferrer"> 
+                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="40" height="40"/> 
+                            </a> 
+                            <a href="https://spring.io/" target="_blank" rel="noreferrer"> 
+                              <img src="https://www.vectorlogo.zone/logos/springio/springio-icon.svg" alt="spring" width="40" height="40"/> 
+                            </a> 
+                            <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer"> 
+                              <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" width="40" height="40"/> 
+                            </a> 
+                            <a href="https://postman.com" target="_blank" rel="noreferrer"> 
+                              <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="postman" width="40" height="40"/> 
+                            </a>
+                          </p>
+                <li><h3>HABILIDADES BLANDAS</h3>
+                <!----><br><h5>Accenture | 2021 - 2021</h5></li>
+                <li><h3>TESTING & Q.A.</h3>
+                <!----><br><h5>Codo a Codo 4.0 | 2021 - 2021</h5></li>
+                <li><h3>REPARACION Y ARMADO DE PC</h3>
+                <!----><br><h5>UTN | 2021 - 2021</h5></li>
             </ul>
-            <div class="col-lg-2">
-                <button type="button" class="btn btn-outline-light" routerLink="/nuevaedu" *ngIf="isLogged">
-                    + Agregar Educación
-                  </button>
-            </div>
-            <div class="col lg 1">
-            </div>
-            <div class="col-lg-11">
+          </div>
+          <div class="col-lg-2">
+            <button type="button" class="btn btn-outline-light" routerLink="/nuevaedu" *ngIf="isLogged">
+              + Agregar Educación
+            </button>
+          </div>
+          <div class="col-lg-11">
                 <table class="table">
                   <tbody>
                     <tr *ngFor="let Educacion of educacion">
                       <td>
-                        <h2>{{Educacion.titulo}}</h2></td>
-                      <td>{{Educacion.descripcion}}</td>
+                        <h2>{{Educacion.titulo}}</h2>
+                      </td>
+                      <td>
+                        <p>{{Educacion.descripcion}}</p>
+                      </td>
                       <td *ngIf="isLogged">
                         <button class="btn btn-outline-light" routerLink="/editedu/{{Educacion.id}}">
-                          <i class="bi bi-pencil-square"></i> EDITAR</button>
+                        <i class="bi bi-pencil-square"></i> EDITAR</button>
                       </td>
                       <td *ngIf=""><button class="btn btn-outline-danger" (click)="delete(Educacion.id)">
                           <i class="bi bi-trash"></i> BORRAR </button>
-                        </td>
+                      </td>
                     </tr>
                   </tbody>
                 </table>
@@ -52,6 +92,6 @@
         </div>
       </div>
     </div>
-  </div>
 </div>
+
 
