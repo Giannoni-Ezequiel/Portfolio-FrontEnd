@@ -1,14 +1,13 @@
 <div class="row">
-        <p>
-                <a class="btn btn-primary" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
-                        <h2>Experiencia laboral</h2>
-                </a>
-            </p>
-        <div class="row">
-            <div class="col">
+     <p>
+        <a class="btn btn-primary" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
+            <h2>Experiencia laboral</h2>
+        </a>
+    </p>
+
                 <div class="collapse multi-collapse" id="multiCollapseExample1">
                     <div class="card card-body">
-                    <ul>
+                   <!--<ul>
                         <li>
                             <h3>Desarrollador Trainee</h3> - 
                             <h4>G&L Group -
@@ -54,12 +53,13 @@
                             <br>Curso de Manipulación Higiénica de los Alimentos; Preparacion de bebidas; 
                             <br>Bartender; Atencion al Cliente; Caja.
                         </p>
-                    </ul> 
+                    </ul>--> 
                     <div class="col-lg-2">
-                        <button type="button" class="btn btn-outline-light" routerLink="/nuevaedu" *ngIf="isLogged">
-                                    + Agregar Experiencia
+                        <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#agregar-modal" ><!--routerLink="/nuevaedu" *ngIf="isLogged"-->
+                                    + Experiencia
                         </button>
                     </div>
+                    <div class="col-lg-1"></div>
                     <div class="col-lg-11">
                     <table class="table">
                         <tbody>
@@ -70,11 +70,11 @@
                                 <td>
                                     <p>{{Experiencia.descripcion}}</p>
                                 </td>
-                                <td *ngIf="isLogged">
-                                    <button class="btn btn-outline-light" routerLink="/editedu/{{Experiencia.id}}">
+                                <td><!--*ngIf="isLogged"-->
+                                    <button class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#editar-modal" routerLink="/editedu/{{Experiencia.id}}">
                                     <i class="bi bi-pencil-square"></i> EDITAR</button>
                                 </td>
-                                <td *ngIf="">
+                                <td><!--*ngIf="isLogged"-->
                                     <button class="btn btn-outline-danger" (click)="delete(Experiencia.id)">
                                     <i class="bi bi-trash"></i> BORRAR </button>
                                 </td>
@@ -85,6 +85,91 @@
                     </div>
                 </div>
             </div>
-        </div>
+    <!--
+
+
+AGREGAR-->
+
+<div class="modal fade" id="agregar-modal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title">Agregar Experiencia</h2>
+        <button class="close" data-bs-dismiss="modal">
+            <span>&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+            <div class="form-group">
+                <label for="cargo">Cargo:</label>
+                <input type="text" class="form-control" id="cargo" name="cargo" [(ngModel)]="cargo" required>
+            </div>
+            <div class="form-group">
+              <label for="nombre_empresa">Nombre de Empresa:</label>
+              <input [(ngModel)]="nombre_empresa" name="nombreEmpresa" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="fecha_inicio">Fecha Inicio:</label>
+                <input [(ngModel)]="fecha_inicio" name="fecha_inicio" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="fecha_fin">Fecha Fin:</label>
+                <input [(ngModel)]="fecha_fin" name="fecha_fin" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="descripcion">Descripción:</label>
+                <input [(ngModel)]="descripcion" name="descripcion" type="text" class="form-control">
+            </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="close">Cerrar</button>
+        <button class="btn btn-primary">Guardar</button>
+      </div>
+    </div>
+  </div>
 </div>
 
+<!--EDITAR-->
+
+<div class="modal fade" id="editar-modal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title">Editar Experiencia</h2>
+        <button class="close" data-bs-dismiss="modal">
+            <span>&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+            <div class="form-group">
+                <label for="cargo">Cargo:</label>
+                <input type="text" class="form-control" id="cargo" name="cargo" [(ngModel)]="experiencias.cargo" required>
+            </div>
+            <div class="form-group">
+              <label for="nombre_empresa">Nombre de Empresa:</label>
+              <input type="text" class="form-control" id="nombre_empresa" name="nombre_empresa" [(ngModel)]="experiencias.nombre_empresa" required>
+            </div>
+            <div class="form-group">
+                <label for="fecha_inicio">Fecha de Inicio:</label>
+                <input type="text" class="form-control" id="fecha_inicio" name="fecha_inicio" [(ngModel)]="experiencias.fecha_inicio" required>
+              </div>
+              <div class="form-group">
+                <label for="fecha_fin">Fecha Fin:</label>
+                <input type="text" class="form-control" id="fecha_fin" name="fecha_fin" [(ngModel)]="experiencias.fecha_fin" required>
+              </div>
+              <div class="form-group">
+                <label for="descripcion">Descripcion:</label>
+                <input type="text" class="form-control" id="descripcion" name="descripcion" [(ngModel)]="experiencias.descripcion" required>
+              </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="close">Cerrar</button>
+        <button class="btn btn-primary">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>

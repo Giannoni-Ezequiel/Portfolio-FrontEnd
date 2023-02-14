@@ -18,6 +18,7 @@ import { AcercaDeComponent } from './componentes/acerca-de/acerca-de.component';
 import { HysComponent } from './componentes/hys/hys.component';
 import { FormsModule } from '@angular/forms';
 import { ContactoComponent } from './componentes/contacto/contacto.component';
+
 @NgModule
 ({
   declarations: 
@@ -38,7 +39,7 @@ import { ContactoComponent } from './componentes/contacto/contacto.component';
   ],
 
   imports: 
-  [
+  [   
     BrowserModule,
     NgCircleProgressModule.forRoot({}),
     AppRoutingModule,
