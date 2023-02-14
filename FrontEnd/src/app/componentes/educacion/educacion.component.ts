@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Educacion } from 'src/app/model/educacion.interface';
+import { Educacion } from 'src/app/model/educacion';
 import { TokenService } from 'src/app/servicios/token.service';
 import { EducacionService } from 'src/app/servicios/educacion.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-educacion',
@@ -11,9 +12,17 @@ import { EducacionService } from 'src/app/servicios/educacion.service';
 export class EducacionComponent implements OnInit {
   
   educacion: Educacion[] = [];
+  educaciones!: Educacion;
+  lugar: string = '';
+  fecha_inicio: string = '';
+  fecha_fin: string = '';
+  titulo: string = '';
+  img: string = '';
+  descripcion: string = '';
   
   constructor(private educacionS: EducacionService, 
-              private tokenService: TokenService) { }
+              private tokenService: TokenService,
+              private router: Router) { }
   
   isLogged = false;
   ngOnInit(): void 
@@ -36,6 +45,18 @@ export class EducacionComponent implements OnInit {
         }
       )
     }
+
+  onCreate(): void{
+      const expe = new Educacion(this.lugar, this.fecha_inicio, this.fecha_fin, this.titulo,
+        this.img, this.descripcion);
+        this.educacionS.save(expe).subscribe(data =>{
+          alert("Se agrego Experiencia");
+          this.router.navigate(['']);
+    }, err => {
+      alert("Error");
+      })}
+  
+  onUpdate(): void{}
 
   delete(id?: number)
   {

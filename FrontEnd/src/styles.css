@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
-html {
-    padding: 20px;
+html 
+{
     background: rgb(20,32,46);
     background: radial-gradient(circle, rgba(20,32,46,1) 30%, rgba(10,19,52,1) 56%, rgba(45,67,86,1) 77%, rgba(137,170,195,1) 98%);
   }

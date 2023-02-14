@@ -10,7 +10,7 @@ import { map } from 'rxjs/operators';
 
 export class AutenticacionService 
 {
-  url="https://bkdprueba95.herokuapp.com/auth/";
+  url="";
   currentUserSubject: BehaviorSubject<any>;
   
   constructor(private http: HttpClient) 

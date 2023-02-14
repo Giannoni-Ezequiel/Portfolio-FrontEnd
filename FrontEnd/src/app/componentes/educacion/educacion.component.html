@@ -4,18 +4,16 @@
           <h2>Educacion</h2>
       </a>
     </p>
-    <div class="row">
-      <div class="col">
-        <div class="collapse multi-collapse" id="multiCollapseExample1">
-          <div class="card card-body">
-            <ul>
+    <div class="collapse multi-collapse" id="multiCollapseExample1">
+      <div class="card card-body">
+            <!--<ul>
               <li>
                     <h3>BOOTCAMP CRISALIS</h3>
-                <!----><br><h5>Finnegans | 2022 - 2023</h5></li>
+                    <br><h5>Finnegans | 2022 - 2023</h5></li>
                 <li><h3>INGENIERIA EN SISTEMAS DE LA INFORMACION</h3>
-                <!----><br><h5>Universidad Nacional Tecnologica| 2021 - 2025</h5></li>
+                <br><h5>Universidad Nacional Tecnologica| 2021 - 2025</h5></li>
                 <li><h3>WEB FULL STACK JR JAVA</h3>
-          <!----><br><h5>Argentina Programa | 2021 - 2022</h5></li>
+                <br><h5>Argentina Programa | 2021 - 2022</h5></li>
                         <h3><i>Tecnologias</i></h3>
                           <p align="left"> 
                             <a href="https://angular.io" target="_blank" rel="noreferrer"> 
@@ -56,18 +54,20 @@
                             </a>
                           </p>
                 <li><h3>HABILIDADES BLANDAS</h3>
-                <!----><br><h5>Accenture | 2021 - 2021</h5></li>
+                <br><h5>Accenture | 2021 - 2021</h5></li>
                 <li><h3>TESTING & Q.A.</h3>
-                <!----><br><h5>Codo a Codo 4.0 | 2021 - 2021</h5></li>
+                <br><h5>Codo a Codo 4.0 | 2021 - 2021</h5></li>
                 <li><h3>REPARACION Y ARMADO DE PC</h3>
-                <!----><br><h5>UTN | 2021 - 2021</h5></li>
-            </ul>
-          </div>
+                <br><h5>UTN | 2021 - 2021</h5></li>
+            </ul>-->
+          
           <div class="col-lg-2">
-            <button type="button" class="btn btn-outline-light" routerLink="/nuevaedu" *ngIf="isLogged">
-              + Agregar Educación
+            <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#agregarExp-modal" routerLink="/nuevaedu" ><!--*ngIf="isLogged"-->
+              + Educación
             </button>
           </div>
+        </div>
+          <div class="col-lg-1"></div>
           <div class="col-lg-11">
                 <table class="table">
                   <tbody>
@@ -78,20 +78,109 @@
                       <td>
                         <p>{{Educacion.descripcion}}</p>
                       </td>
-                      <td *ngIf="isLogged">
-                        <button class="btn btn-outline-light" routerLink="/editedu/{{Educacion.id}}">
+                      <td><!-- *ngIf="isLogged"-->
+                        <button class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#editarExp-modal" routerLink="/editedu/{{Educacion.id}}">
                         <i class="bi bi-pencil-square"></i> EDITAR</button>
                       </td>
-                      <td *ngIf=""><button class="btn btn-outline-danger" (click)="delete(Educacion.id)">
-                          <i class="bi bi-trash"></i> BORRAR </button>
+                      <td>
+                        <button class="btn btn-outline-danger" (click)="delete(Educacion.id)">
+                        <i class="bi bi-trash"></i> BORRAR </button>
                       </td>
                     </tr>
                   </tbody>
                 </table>
-          </div>
-        </div>
-      </div>
     </div>
+  </div>
 </div>
 
+<div class="modal fade" id="agregarExp-modal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title">Agregar Educacion</h2>
+        <button class="close" data-bs-dismiss="modal">
+            <span>&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+            <div class="form-group">
+                <label for="lugar">Lugar:</label>
+                <input type="text" class="form-control" id="lugar" name="lugar" [(ngModel)]="lugar" required>
+            </div>
+            <div class="form-group">
+                <label for="fecha_inicio">Fecha Inicio:</label>
+                <input [(ngModel)]="fecha_inicio" name="fecha_inicio" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="fecha_fin">Fecha Fin:</label>
+                <input [(ngModel)]="fecha_fin" name="fecha_fin" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="titulo">titulo:</label>
+              <input [(ngModel)]="titulo" name="titulo" type="text" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="img">img:</label>
+            <input [(ngModel)]="img" name="img" type="text" class="form-control">
+        </div>
+            <div class="form-group">
+                <label for="descripcion">Descripción:</label>
+                <input [(ngModel)]="descripcion" name="descripcion" type="text" class="form-control">
+            </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="close">Cerrar</button>
+        <button class="btn btn-primary">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
 
+<!--EDITAR-->
+
+<div class="modal fade" id="editarExp-modal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title">Editar Experiencia</h2>
+        <button class="close" data-bs-dismiss="modal">
+            <span>&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+            <div class="form-group">
+                <label for="lugar">Lugar:</label>
+                <input type="text" class="form-control" id="lugar" name="lugar" [(ngModel)]="educaciones.lugar" required>
+            </div>
+            <div class="form-group">
+                <label for="fecha_inicio">Fecha de Inicio:</label>
+                <input type="text" class="form-control" id="fecha_inicio" name="fecha_inicio" [(ngModel)]="educaciones.fecha_inicio" required>
+              </div>
+              <div class="form-group">
+                <label for="fecha_fin">Fecha Fin:</label>
+                <input type="text" class="form-control" id="fecha_fin" name="fecha_fin" [(ngModel)]="educaciones.fecha_fin" required>
+              </div>
+              <div class="form-group">
+                <label for="titulo">titulo:</label>
+                <input type="text" class="form-control" id="titulo" name="titulo" [(ngModel)]="educaciones.titulo" required>
+              </div>
+              <div class="form-group">
+                <label for="img">img:</label>
+                <input type="text" class="form-control" id="img" name="img" [(ngModel)]="educaciones.img" required>
+              </div>
+              <div class="form-group">
+                <label for="descripcion">Descripcion:</label>
+                <input type="text" class="form-control" id="descripcion" name="descripcion" [(ngModel)]="educaciones.descripcion" required>
+              </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="close">Cerrar</button>
+        <button class="btn btn-primary">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>

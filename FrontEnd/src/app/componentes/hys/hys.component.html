@@ -4,21 +4,24 @@
           <h2>Hard & Soft Skills</h2>
       </a>
     </p>
-</div>
-<div class="row">
-    <div class="col">
-        <div class="collapse multi-collapse" id="multiCollapseExample1">
-                <div class="card-group">
-                    <div class="card text-center">
-                        <div class="card-body">
-                            <circle-progress
-                                    [percent]="85"
+    <div class="collapse multi-collapse" id="multiCollapseExample1">
+        <div class="card card-body">
+            <div class="col-lg-2">
+                <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#agregarHyS-modal" ><!--routerLink="/nuevaedu" *ngIf="isLogged"-->
+                        + HyS
+                </button>
+            </div>
+        </div>
+        <div class="card text-center col-sm-4 col-md-4 col-lg-4" *ngFor="let hys of hys">
+            <circle-progress
+                                    [percent]="(hys.porcentaje)"
                                     [radius]="90"
-                                    [imageSrc]="'../../../assets/Java.png'"
+                                    [imageSrc]="''"
+                                    [title]="(hys.nombre)"
+                                    [titleColor]="'#212F3C'"
                                     [showImage]="true"
                                     [imageHeight]="70"
                                     [imageWidth]="70"
-                                    [title]="'JAVA'"
                                     [showUnits]="false"
                                     [titleColor]="'white'"
                                     [outerStrokeWidth]="16"
@@ -29,103 +32,77 @@
                                     [animationDuration]="600"   
                                         >
                             </circle-progress>
+                            <button class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#editarHyS-modal" routerLink="/editedu/{{hys.id}}">
+                                <i class="bi bi-pencil-square"></i> EDITAR</button>
+                            <button class="btn btn-outline-danger" (click)="delete(hys.id)">
+                                <i class="bi bi-trash"></i> BORRAR </button>    
                         </div>
                     </div>
-                    <div class="card text-center">
-                        <div class="card-body text-center">
-                            <circle-progress
-                            [percent]="70"
-                            [radius]="90"
-                            [imageSrc]="'../assets/Bootstrap.png'"
-                            [showImage]="true"
-                            [imageHeight]="90"
-                            [imageWidth]="90"
-                            [showUnits] = "false"
-                            [title]="'Bootstrap'"
-                            [titleFontSize]="'2em'"
-                            [showTitle]="false"
-                            [outerStrokeWidth]="16"
-                            [innerStrokeWidth]="2"
-                            [outerStrokeColor]="'#39FF14'"
-                            [innerStrokeColor]="'radial-gradient'"
-                            [animation]="true"
-                            [animationDuration]="600"
-                        >
-                            </circle-progress>         
-                        </div>
-                    </div>
-                    <div class="card text-center">
-                        <div class="card-body text-center">
-                            <circle-progress
-                            [percent]="70"
-                            [radius]="90"
-                            [imageSrc]="'../assets/js.png'"
-                            [showImage]="true"
-                            [imageHeight]="90"
-                            [imageWidth]="90"
-                            [showUnits] = "false"
-                            [title]="'HTML'"
-                            [titleFontSize]="'2em'"
-                            [showTitle]="false"
-                            [outerStrokeWidth]="16"
-                            [innerStrokeWidth]="2"
-                            [outerStrokeColor]="'#39FF14'"
-                            [innerStrokeColor]="'radial-gradient'"
-                            [animation]="true"
-                            [animationDuration]="600"
-                        >
-                            </circle-progress>         
-                        </div>
-                    </div>
-                    <div class="card text-center">
-                        <div class="card-body text-center">
-                            <circle-progress
-                            [percent]="80"
-                            [radius]="90"
-                            [imageSrc]="'../assets/html.png'"
-                            [showImage]="true"
-                            [imageHeight]="90"
-                            [imageWidth]="90"
-                            [showUnits] = "false"
-                            [title]="'HTML'"
-                            [titleFontSize]="'2em'"
-                            [showTitle]="false"
-                            [outerStrokeWidth]="16"
-                            [innerStrokeWidth]="2"
-                            [outerStrokeColor]="'#39FF14'"
-                            [innerStrokeColor]="'radial-gradient'"
-                            [animation]="true"
-                            [animationDuration]="600"
-                        >
-                            </circle-progress>        
-                        </div>
-                    </div>
-                    <div class="card text-center">
-                        <div class="card-body text-center">
-                            <circle-progress
-                            [percent]="100"
-                            [radius]="90"
-                            [imageSrc]="'../assets/CSS.png'"
-                            [showImage]="true"
-                            [imageHeight]="90"
-                            [imageWidth]="90"
-                            [showUnits] = "false"
-                            [title]="'HTML'"
-                            [titleFontSize]="'2em'"
-                            [showTitle]="false"
-                            [outerStrokeWidth]="16"
-                            [innerStrokeWidth]="2"
-                            [outerStrokeColor]="'#39FF14'"
-                            [innerStrokeColor]="'radial-gradient'"
-                            [animation]="true"
-                            [animationDuration]="600"
-                        >
-                            </circle-progress>         
-                        </div>
-                    </div>
-                </div>
-        </div>
-    </div>
-</div>
   
-
+<div class="modal fade" id="agregarHyS-modal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title">Agregar HyS</h2>
+          <button class="close" data-bs-dismiss="modal">
+              <span>&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+              <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input [(ngModel)]="nombre" name="nombre" type="text" class="form-control">
+              </div>
+              <div class="form-group">
+                  <label for="porcentaje">Porcentaje:</label>
+                  <input [(ngModel)]="porcentaje" name="porcentaje" type="text" class="form-control">
+              </div>
+              <div class="form-group">
+                  <label for="img">Img:</label>
+                  <input [(ngModel)]="img" name="img" type="text" class="form-control">
+              </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-bs-dismiss="close">Cerrar</button>
+          <button class="btn btn-primary">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--EDITAR-->
+  
+  <div class="modal fade" id="editarHyS-modal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title">Editar HyS</h2>
+          <button class="close" data-bs-dismiss="modal">
+              <span>&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+              <div class="form-group">
+                  <label for="nombre">nombre:</label>
+                  <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="HyS.nombre" required>
+              </div>
+              <div class="form-group">
+                <label for="porcentaje">porcentaje:</label>
+                <input type="text" class="form-control" id="porcentaje" name="porcentaje" [(ngModel)]="HyS.porcentaje" required>
+              </div>
+              <div class="form-group">
+                  <label for="img">img:</label>
+                  <input type="text" class="form-control" id="img" name="img" [(ngModel)]="HyS.img" required>
+                </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-bs-dismiss="close">Cerrar</button>
+          <button class="btn btn-primary">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>

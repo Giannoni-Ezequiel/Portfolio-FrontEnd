@@ -18,6 +18,10 @@ import { AcercaDeComponent } from './componentes/acerca-de/acerca-de.component';
 import { HysComponent } from './componentes/hys/hys.component';
 import { FormsModule } from '@angular/forms';
 import { ContactoComponent } from './componentes/contacto/contacto.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideStorage,getStorage } from '@angular/fire/storage';
 
 @NgModule
 ({
@@ -46,6 +50,9 @@ import { ContactoComponent } from './componentes/contacto/contacto.component';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
+    BrowserAnimationsModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideStorage(() => getStorage()),
   ],
 
   providers: [],
