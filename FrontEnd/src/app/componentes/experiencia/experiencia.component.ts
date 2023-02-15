@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Experiencia } from 'src/app/model/experiencia';
 import { TokenService } from 'src/app/servicios/token.service';
 import { ExperienciaService } from 'src/app/servicios/experiencia.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-experiencia',
@@ -12,19 +12,21 @@ import { Router } from '@angular/router';
 
 export class ExperienciaComponent implements OnInit {
 
-  experiencia: Experiencia[] = [];
-  experiencias!: Experiencia;
-  cargo: string = '';
-  nombre_empresa: string = '';
+  experiencia: Experiencia[];
+  experiencias: Experiencia = null;
+  cargo: string;
+  nombreEmpresa: string = '';
   fecha_inicio: string = '';
   fecha_fin: string = '';
   descripcion: string = '';
   
-  constructor(private experienciaS: ExperienciaService, 
+  constructor(private experienciaS: ExperienciaService,
+              private activatedRouter: ActivatedRoute, 
               private tokenService: TokenService,
               private router: Router) { }
   
   isLogged = false;
+  
   ngOnInit(): void 
   {
     this.cargarExperiencia();
@@ -33,7 +35,9 @@ export class ExperienciaComponent implements OnInit {
       } else {
       this.isLogged = false;
       }
-    }
+    
+    
+  }
   
   cargarExperiencia(): void
   {
@@ -47,7 +51,7 @@ export class ExperienciaComponent implements OnInit {
     }
 
   onCreate(): void{
-    const expe = new Experiencia(this.cargo, this.nombre_empresa, this.fecha_inicio, this.fecha_fin,
+    const expe = new Experiencia(this.cargo, this.nombreEmpresa, this.fecha_inicio, this.fecha_fin,
       this.descripcion);
       this.experienciaS.save(expe).subscribe(data =>{
         alert("Se agrego Experiencia");
@@ -56,7 +60,29 @@ export class ExperienciaComponent implements OnInit {
     alert("Error");
     })}
 
-  onUpdate(): void{}
+  cargarDetalle(): void{
+    const id = this.activatedRouter.snapshot.params['id'];
+    this.experienciaS.detail(id).subscribe(
+      data => {
+        this.experiencias = data;
+      }, err => {
+        alert("Error al modificar experiencia");
+        this.router.navigate(['']);
+      })
+  }
+
+  onUpdate(): void
+  {
+    this.cargarDetalle();
+    const id = this.activatedRouter.snapshot.params['id'];
+    this.experienciaS.update(id, this.experiencias).subscribe(data => {
+      this.router.navigate(['']);
+    }, err => {
+      alert("Error al modificar experiencia");
+        }
+      )
+  }
+  
 
   delete(id?: number)
   {

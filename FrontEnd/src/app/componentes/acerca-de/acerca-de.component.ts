@@ -18,12 +18,12 @@ export class AcercaDeComponent implements OnInit {
   public deletePersona!: Persona;
   roles!: string[];
   isAdmin: boolean = false;
-  personas!: Persona;
-  nombre: String = '';
-  apellido: String = '';
-  titulo: String = '';
-  sobre_mi: String = '';
-  img: String = '';
+  personas: Persona = null;
+  nombre: string = '';
+  apellido: string = '';
+  titulo: string = '';
+  sobre_mi: string = '';
+
 
   name = new FormControl('');
 
@@ -83,7 +83,7 @@ public onEditPersona(persona: Persona):void {
 
 }*/
 onUpdate(): void{
-  this.personas.img = this.imagenService.url;
+  /*this.personas.img = this.imagenService.url;*/
 }
 
 uploadImage($event: any)

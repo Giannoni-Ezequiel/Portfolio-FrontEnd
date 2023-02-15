@@ -8,20 +8,20 @@ import { Experiencia } from '../model/experiencia';
   providedIn: 'root'
 })
 export class ExperienciaService {
-  URL = environment.apiBaseUrl + 'experiencia/';
+  URL = environment.apiBaseUrl + 'experiencia';
 
   constructor(private httpClient : HttpClient) { }
 
   public lista(): Observable<Experiencia[]>{
-    return this.httpClient.get<Experiencia[]>(this.URL + 'lista');
+    return this.httpClient.get<Experiencia[]>(this.URL + '/list');
   }
 
   public detail(id: number): Observable<Experiencia>{
-    return this.httpClient.get<Experiencia>(this.URL + `detail/${id}`);
+    return this.httpClient.get<Experiencia>(this.URL + `/detail/${id}`);
   }
 
   public save(experiencia: Experiencia): Observable<any>{
-    return this.httpClient.post<any>(this.URL + 'create', experiencia);
+    return this.httpClient.post<any>(this.URL + '/add', experiencia);
   }
 
   public update(id: number, experiencia: Experiencia): Observable<any>{
