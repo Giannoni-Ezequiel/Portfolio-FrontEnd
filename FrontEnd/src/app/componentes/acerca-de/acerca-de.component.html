@@ -36,24 +36,24 @@
       <div class="modal-body">
         <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
           <div class="form-group">
-              <label for="nombre">Lugar:</label>
+              <label for="nombre">Nombre:</label>
               <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="personas.nombre" required>
           </div>
           <div class="form-group">
-              <label for="apellido">apellido:</label>
+              <label for="apellido">Apellido:</label>
               <input type="text" class="form-control" id="apellido" name="apellido" [(ngModel)]="personas.apellido" required>
             </div>
             <div class="form-group">
-              <label for="titulo">titulo:</label>
+              <label for="titulo">Titulo:</label>
               <input type="text" class="form-control" id="titulo" name="titulo" [(ngModel)]="personas.titulo" required>
             </div>
             <div class="form-group">
-              <label for="sobre_mi">sobre_mi:</label>
+              <label for="sobre_mi">Sobre mi:</label>
               <input type="text" class="form-control" id="sobre_mi" name="sobre_mi" [(ngModel)]="personas.sobre_mi" required>
             </div>
             <div class="form-group">
-              <label for="img">img:</label>
-              <input type="text" class="form-control" id="img" name="img" [(ngModel)]="personas.img" (change)="uploadImage($event)" accept=".jpg, .jpeg, .png">
+              <label for="img">Img:</label>
+              <input type="file" class="form-control" id="img" name="img" [(ngModel)]="personas.img" (change)="uploadImage($event)" accept=".jpg, .jpeg, .png">
             </div>
             <div class="imagen">
               <img [src]="imagenService.url" width="200px">
