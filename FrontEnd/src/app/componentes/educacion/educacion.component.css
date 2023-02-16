@@ -11,6 +11,9 @@
 
 h1, h3 {
     display: inline;
+    font-size: 2em;
+    letter-spacing: 1px;
+    color:#fff;
 }
 
 h2 {

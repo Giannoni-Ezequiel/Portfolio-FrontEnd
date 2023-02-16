@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Educacion } from 'src/app/model/educacion';
 import { TokenService } from 'src/app/servicios/token.service';
 import { EducacionService } from 'src/app/servicios/educacion.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-educacion',
@@ -11,20 +11,22 @@ import { Router } from '@angular/router';
 })
 export class EducacionComponent implements OnInit {
   
-  educacion: Educacion[] = [];
-  educaciones!: Educacion;
-  lugar: string = '';
+  educacion: Educacion[];
+  educaciones: Educacion = null;
+  nombre: string = '';
   fecha_inicio: string = '';
   fecha_fin: string = '';
-  titulo: string = '';
+  titulo: string;
   img: string = '';
   descripcion: string = '';
   
-  constructor(private educacionS: EducacionService, 
+  constructor(private educacionS: EducacionService,
+              private activatedRouter: ActivatedRoute,   
               private tokenService: TokenService,
               private router: Router) { }
   
   isLogged = false;
+
   ngOnInit(): void 
   {
     this.cargarEducacion();
@@ -47,16 +49,38 @@ export class EducacionComponent implements OnInit {
     }
 
   onCreate(): void{
-      const expe = new Educacion(this.lugar, this.fecha_inicio, this.fecha_fin, this.titulo,
+      const expe = new Educacion(this.titulo,this.nombre, this.fecha_inicio, this.fecha_fin, 
         this.img, this.descripcion);
         this.educacionS.save(expe).subscribe(data =>{
-          alert("Se agrego Experiencia");
+          alert("Se agrego Educacion");
           this.router.navigate(['']);
     }, err => {
       alert("Error");
       })}
+
+  cargarDetalle(): void
+  {
+        const id = this.activatedRouter.snapshot.params['id'];
+        this.educacionS.detail(id).subscribe(
+          data => {
+            this.educaciones = data;
+          }, err => {
+            alert("Error al modificar educacion");
+            this.router.navigate(['']);
+          })
+      }
   
-  onUpdate(): void{}
+  onUpdate(): void
+  {
+    this.cargarDetalle();
+    const id = this.activatedRouter.snapshot.params['id'];
+    this.educacionS.update(id, this.educaciones).subscribe(data => {
+      this.router.navigate(['']);
+    }, err => {
+      alert("Error al modificar educacion");
+        }
+      )
+  }
 
   delete(id?: number)
   {

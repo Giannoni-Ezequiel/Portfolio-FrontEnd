@@ -25,10 +25,10 @@ export class ExperienciaService {
   }
 
   public update(id: number, experiencia: Experiencia): Observable<any>{
-    return this.httpClient.put<any>(this.URL + `update/${id}`, experiencia);
+    return this.httpClient.put<any>(this.URL + `/${id}`, experiencia);
   }
 
   public delete(id: number): Observable<any>{
-    return this.httpClient.delete<any>(this.URL + `delete/${id}`);
+    return this.httpClient.delete<any>(this.URL + `/${id}`);
   }
 }
