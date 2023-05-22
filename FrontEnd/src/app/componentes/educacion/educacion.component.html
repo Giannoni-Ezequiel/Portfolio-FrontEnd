@@ -1,13 +1,13 @@
 <div class="row">
     <p>
-      <a class="btn btn-primary" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
+      <a class="btn btn-primary" name="collapse" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
           <h2>Educacion</h2>
       </a>
     </p>
   <div class="collapse multi-collapse" id="multiCollapseExample1">
       <div class="card card-body">
           <div class="col-lg-2">
-            <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#agregarEdu-modal" routerLink="/nuevaedu" ><!--*ngIf="isLogged"-->
+            <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#agregarEdu-modal"><!--*ngIf="isLogged"-->
               + Educación
             </button>
           </div>
@@ -15,8 +15,19 @@
           <div class="col-lg-1">
           <div class="col-lg-11">
                 <table class="table text-center">
+                  <thead>
+                    <tr>
+                      <th scope="col">Titulo</th>
+                      <th scope="col">Nombre</th>
+                      <th scope="col">Fecha de Inicio</th>
+                      <th scope="col">Fecha Fin</th>
+                      <th scope="col">Imagen</th>
+                      <th scope="col">Descripcion</th>
+                      <th scope="col">ACCION</th>
+                    </tr>
+                  </thead>
                   <tbody>
-                    <tr *ngFor="let Educacion of educacion">
+                    <tr *ngFor="let Educacion of educacion" (click)="editarEducacion(Educacion.id)">
                       <td>
                         <h3>{{Educacion.titulo}}</h3>
                       </td>
@@ -36,7 +47,7 @@
                         <p>{{Educacion.descripcion}}</p>
                       </td>
                       <td><!-- *ngIf="isLogged"-->
-                        <button class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#editarEdu-modal" routerLink="/editedu/{{Educacion.id}}">
+                        <button class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#editarEdu-modal/:id" (click)="cargarDetalle(Educacion.id)">
                         <i class="bi bi-pencil-square"></i> EDITAR</button>
                       </td>
                       <td>
@@ -62,7 +73,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+        <form>
             <div class="form-group">
               <div class="form-group">
               <label for="titulo">Titulo:</label>
@@ -88,8 +99,8 @@
                 <input [(ngModel)]="descripcion" name="descripcion" type="text" class="form-control">
             </div>
             <div class="modal-footer">
-              <button class="btn btn-secondary" data-bs-dismiss="close">Cerrar</button>
-              <button class="btn btn-primary">Guardar</button>
+              <button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              <button class="btn btn-primary" (click)="onCreate()">Guardar</button>
             </div>
         </form>
       </div>
@@ -103,7 +114,7 @@
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h2 class="modal-title">Editar Experiencia</h2>
+        <h2 class="modal-title">Editar Educacion</h2>
         <button class="close" data-bs-dismiss="modal">
             <span>&times;</span>
         </button>

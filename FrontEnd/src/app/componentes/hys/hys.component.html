@@ -1,10 +1,10 @@
 <div class="row">
     <p>
-      <a class="btn btn-primary" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
+      <a class="btn btn-primary" data-bs-toggle="collapse" href="#multiCollapseExample2" role="button" aria-expanded="false" aria-controls="multiCollapseExample2">
           <h2>Hard & Soft Skills</h2>
       </a>
     </p>
-    <div class="collapse multi-collapse" id="multiCollapseExample1">
+    <div class="collapse multi-collapse" id="multiCollapseExample2">
         <div class="card card-body">
             <div class="col-lg-2">
                 <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#agregarHyS-modal" ><!--routerLink="/nuevaedu" *ngIf="isLogged"-->
@@ -32,7 +32,7 @@
                                     [animationDuration]="600"   
                                         >
                             </circle-progress>
-                            <button class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#editarHyS-modal" routerLink="/editedu/{{hys.id}}">
+                            <button class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#editarHyS-modal">
                                 <i class="bi bi-pencil-square"></i> EDITAR</button>
                             <button class="btn btn-outline-danger" (click)="delete(hys.id)">
                                 <i class="bi bi-trash"></i> BORRAR </button>    
@@ -84,6 +84,8 @@
           </button>
         </div>
         <div class="modal-body">
+          <div class="container" *ngIf="HyS">
+            <div class="row">
           <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
               <div class="form-group">
                   <label for="nombre">nombre:</label>
@@ -99,6 +101,8 @@
                 </div>
           </form>
         </div>
+      </div>
+    </div>
         <div class="modal-footer">
           <button class="btn btn-secondary" data-bs-dismiss="close">Cerrar</button>
           <button class="btn btn-primary">Guardar</button>

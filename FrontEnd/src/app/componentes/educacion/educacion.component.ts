@@ -7,7 +7,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-educacion',
   templateUrl: './educacion.component.html',
-  styleUrls: ['./educacion.component.css']
+  styleUrls: ['./educacion.component.css'],
+  providers: [EducacionService]
 })
 export class EducacionComponent implements OnInit {
   
@@ -58,9 +59,13 @@ export class EducacionComponent implements OnInit {
       alert("Error");
       })}
 
-  cargarDetalle(): void
+  editarEducacion(id: any) {
+    console.log(id);
+  }
+
+  cargarDetalle(id: number) 
   {
-        const id = this.activatedRouter.snapshot.params['id'];
+        id = this.activatedRouter.snapshot.params['id'];
         this.educacionS.detail(id).subscribe(
           data => {
             this.educaciones = data;
@@ -72,8 +77,9 @@ export class EducacionComponent implements OnInit {
   
   onUpdate(): void
   {
-    this.cargarDetalle();
+    
     const id = this.activatedRouter.snapshot.params['id'];
+    this.cargarDetalle(id);
     this.educacionS.update(id, this.educaciones).subscribe(data => {
       this.router.navigate(['']);
     }, err => {
