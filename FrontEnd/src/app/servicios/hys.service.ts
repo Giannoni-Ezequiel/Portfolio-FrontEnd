@@ -9,7 +9,7 @@ import { HyS } from '../model/hys';
 })
 export class HysService {
 
-  URL = environment.apiBaseUrl + 'hys/';
+  URL = environment.apiBaseUrl + '/hys/';
 
   constructor(
     private httpClient: HttpClient
