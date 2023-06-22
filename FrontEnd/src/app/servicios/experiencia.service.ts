@@ -8,7 +8,7 @@ import { Experiencia } from '../model/experiencia';
   providedIn: 'root'
 })
 export class ExperienciaService {
-  URL = environment.apiBaseUrl + '/experiencia';
+  URL = environment.apiBaseUrl + 'experiencia';
 
   constructor(private httpClient : HttpClient) { }
 

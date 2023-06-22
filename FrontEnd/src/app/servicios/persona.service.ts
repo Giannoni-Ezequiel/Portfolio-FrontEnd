@@ -9,7 +9,7 @@ import { Persona } from '../model/persona';
 })
 export class PersonaService 
 {
-  URL = environment.apiBaseUrl + '/persona/';
+  URL = environment.apiBaseUrl + 'persona/';
 
     constructor(private http: HttpClient) { }
 
@@ -20,17 +20,17 @@ export class PersonaService
 
     public addPersona(persona: Persona): Observable<Persona> 
     {
-      return this.http.post<Persona>(`${this.URL}persona/crear`, persona);
+      return this.http.post<Persona>(`${this.URL}crear`, persona);
     } 
 
     public updatePersona(persona: Persona): Observable<Persona> 
     {
-      return this.http.put<Persona>(`${this.URL}persona/update`, persona);
+      return this.http.put<Persona>(`${this.URL}update`, persona);
     }
 
     public deletePersona(personaId: number): Observable<void> 
     {
-      return this.http.delete<void>(`${this.URL}/persona/delete/${personaId}`);
+      return this.http.delete<void>(`${this.URL}delete/${personaId}`);
     }
 
   }
