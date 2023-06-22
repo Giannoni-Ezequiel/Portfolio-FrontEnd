@@ -7,7 +7,7 @@
     <div class="collapse multi-collapse" id="multiCollapseExample3">
       <div class="card card-body">
                     <div class="col-lg-2">
-                        <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#agregar-modal" ><!--routerLink="/nuevaedu" *ngIf="isLogged"-->
+                        <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#agregarExp-modal" ><!--routerLink="/nuevaedu" *ngIf="isLogged"-->
                            + Experiencia
                         </button>
                     </div>
@@ -44,7 +44,7 @@
                                 </td>
                                 
                                 <td><!--*ngIf="isLogged"-->
-                                    <button class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#editarExp-modal" routerLink="/editedu/{{Experiencia.id}}">
+                                    <button class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#editarExp-modal/:id" routerLink="/editedu/{{Experiencia.id}}">
                                     <i class="bi bi-pencil-square"></i> EDITAR</button>
                                 </td>
                                 <td><!--*ngIf="isLogged"-->
@@ -140,7 +140,7 @@ AGREGAR-->
                     <input type="text" class="form-control" id="descripcion" name="descripcion" [(ngModel)]="experiencias.descripcion" required>
                   </div>
                   <div class="form-group">
-                  <button class="btn btn-secondary" data-bs-dismiss="close">
+                  <button class="btn btn-secondary" data-bs-dismiss="modal">
                     Cerrar</button>
                   <button class="btn btn-primary">Guardar</button>
                   </div>
