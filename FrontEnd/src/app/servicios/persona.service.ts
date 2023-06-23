@@ -13,10 +13,10 @@ export class PersonaService
 
     constructor(private http: HttpClient) { }
 
-    /*public getPersonas(): Observable<Persona[]>
+    public getPersonas(): Observable<Persona[]>
     {
-      return this.http.get<Persona[]>(`${this.URL}persona/ver`);
-    }*/
+      return this.http.get<Persona[]>(`${this.URL}ver`);
+    }
 
     public addPersona(persona: Persona): Observable<Persona> 
     {

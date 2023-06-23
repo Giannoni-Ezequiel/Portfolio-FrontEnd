@@ -7,7 +7,22 @@
                                         rgba(45,67,86,1) 77%, 
                                         rgba(137,170,195,1) 98%);
   }
+th {
+    color:rgb(247, 242, 242);
+}
+td {
+    color: rgb(253, 253, 253);
+}
+table{
+    table-layout: fixed;
+    width: 180px;
+}
 
+th, td {
+    border: 1px solid blue;
+    width: 200px;
+    word-wrap: break-word;
+}
 .div {
     text-align: center;
 }

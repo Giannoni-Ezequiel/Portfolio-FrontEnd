@@ -34,19 +34,19 @@ export class AcercaDeComponent implements OnInit {
     public imagenService: ImagenService,
   ){}
 
-  ngOnInit() {
-    /*this.getPersonas();
+  ngOnInit(): void {
+    this.getPersonas();
     this.roles = this.tokenService.getAuthorities();
     this.roles.forEach(role => {
       if (role === 'ROLE_ADMIN') {
         this.isAdmin = true;
       }
-    });*/
+    });
   }
 
-/*public getPersonas(): void{
+public getPersonas(): void{
   this.personaService.getPersonas().subscribe((response: Persona[]) =>{
-  this.personas = response;
+  this.persona = response;
   },
   (error: HttpErrorResponse) =>{
     alert(error.message);
@@ -81,7 +81,7 @@ public onEditPersona(persona: Persona):void {
   }
 )
 
-}*/
+}
 onUpdate(): void{
   /*this.personas.img = this.imagenService.url;*/
 }

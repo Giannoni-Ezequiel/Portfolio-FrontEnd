@@ -8,7 +8,22 @@
 .div {
     text-align: center;
 }
+th {
+    color:rgb(247, 242, 242);
+}
+td {
+    color: rgb(253, 253, 253);
+}
+table{
+    table-layout: fixed;
+    width: 180px;
+}
 
+th, td {
+    border: 1px solid blue;
+    width: 200px;
+    word-wrap: break-word;
+}
 h1, h3 {
     display: inline;
     font-size: 2em;
