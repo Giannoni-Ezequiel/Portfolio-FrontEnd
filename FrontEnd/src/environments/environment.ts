@@ -10,6 +10,6 @@ export const environment =
     measurementId: 'G-3M6K90B856',
   },
   production: true,
-  apiBaseUrl: 'http://localhost:8080/', //   back-render-ptw0.onrender.com.
+  apiBaseUrl: 'http://back-render-ptw0.onrender.com/', //localhost:8080   .
   };
 
