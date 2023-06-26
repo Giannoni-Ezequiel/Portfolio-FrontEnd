@@ -16,7 +16,7 @@ td {
 }
 table{
     table-layout: fixed;
-    width: 180px;
+    width: 100%;
 }
 
 th, td {
@@ -55,3 +55,17 @@ h2 {
 .btn {
     background: rgb(32, 51, 72);
   }
+
+@media (max-width: 1300px) {
+    table{
+        table-layout: auto;
+        width: 100%;
+    }
+}
+
+@media (max-width: 520px) {
+    table{
+        display: none;
+        width: 100%;
+    }
+}
