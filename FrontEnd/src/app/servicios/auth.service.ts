@@ -19,11 +19,11 @@ import { NuevoUsuario } from '../model/nuevo-usuario';
   
     public nuevo(nuevoUsuario: NuevoUsuario): Observable<any>
     {
-      return this.httpClient.post<any>(this.url + 'auth/nuevo', nuevoUsuario);
+      return this.httpClient.post<any>(this.url + '/auth/nuevo', nuevoUsuario);
       } 
   
     public login(loginUsuario: LoginUsuario): Observable<Jwt>
     {
-      return this.httpClient.post<Jwt>(this.url + 'auth/login', loginUsuario);
+      return this.httpClient.post<Jwt>(this.url + '/auth/login', loginUsuario);
       }
     }
