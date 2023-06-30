@@ -3,7 +3,6 @@ import { Experiencia } from 'src/app/model/experiencia';
 import { TokenService } from 'src/app/servicios/token.service';
 import { ExperienciaService } from 'src/app/servicios/experiencia.service';
 import { ActivatedRoute, Router } from '@angular/router';
-
 @Component({
   selector: 'app-experiencia',
   templateUrl: './experiencia.component.html',
