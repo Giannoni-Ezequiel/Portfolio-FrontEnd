@@ -1,4 +1,3 @@
-<em> # Portafolio Demo </em>
 
 <h1 align="center"> Portafolio </h1>
 
@@ -19,8 +18,6 @@
 - [Acceso al proyecto](#acceso-proyecto)
 
 - [Tecnologías Utilizadas](#tecnologías-utilizadas)
-
-- [Personas Contribuyentes](#personas-contribuyentes)
 
 - [Personas Desarrolladores del Proyecto](#personas-desarrolladores)
 
@@ -58,10 +55,9 @@ Las tecnologias software que estoy trabajando en este proyecto son:
 -  Java
 -  MySQL
 
-# personas-contribuyentes
 
 ## Personas desarrolladores
 
 # Ezequiel Sebástian Giannoni
 
-# conclusión
+# MD: egiannoni95@gmail.com 
