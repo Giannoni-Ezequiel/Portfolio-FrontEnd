@@ -11,7 +11,7 @@
 
 - [Características de la aplicación y demostración](#caracteristicas-de-la-aplicacion-y-demostracion)
 
-- [Acceso al proyecto](#acceso-proyecto)
+- [Acceso al proyecto](#acceso-al-proyecto)
 
 - [Tecnologías Utilizadas](#tecnologias-utilizadas)
 
@@ -37,7 +37,7 @@ Las tecnologias software que estoy trabajando en este proyecto son:
    <img src="https://img.shields.io/badge/STATUS-EN%20DESAROLLO-green">
    </p>
 
-# :hammer: Características de la aplicación y demostración
+# :hammer: Caracteristicas de la aplicacion y demostracion
 
 - `Iniciar sesión`: campos para nombre de usuario y contraseña.
 - `Navegación`: una sola página dinámica.
