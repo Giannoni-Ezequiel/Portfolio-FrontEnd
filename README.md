@@ -9,11 +9,11 @@
 
 - [Estado del proyecto](#estado-del-proyecto)
 
-- [Características de la aplicación y demostración](#características-de-la-aplicación-y-demostración)
+- [Características de la aplicación y demostración](#caracteristicas-de-la-aplicacion-y-demostracion)
 
 - [Acceso al proyecto](#acceso-proyecto)
 
-- [Tecnologías Utilizadas](#tecnologías-utilizadas)
+- [Tecnologías Utilizadas](#tecnologias-utilizadas)
 
 - [Personas Desarrolladores del Proyecto](#personas-desarrolladores)
 
@@ -21,7 +21,7 @@
 
 - [Conclusión](#conclusión)
 
- # Título e imagen de portada
+ # Titulo e imagen de portada
  
 
  ![Captura de pantalla 2022-09-05 201850](https://user-images.githubusercontent.com/82993315/188520084-15c2db2d-39f5-45d9-aebe-04051ade2281.jpg)
@@ -44,7 +44,7 @@ Las tecnologias software que estoy trabajando en este proyecto son:
 - `CRUD`: (Create|Read|Update|Delete) perfil (foto, descripción), estudios, experiencia laboral, skills(logotipo,descripción), proyectos(enlaces, vista previa, galeria)
 - `Perfiles según permisos`: accesos de distintos perfiles (admin,usuario)
 
-# Tecnologías Utilizadas
+# Tecnologias utilizadas
 
 -  Html
 -  Css
@@ -54,6 +54,9 @@ Las tecnologias software que estoy trabajando en este proyecto son:
 
 # Personas desarrolladores
 - Ezequiel Sebástian Giannoni
+
+# Acceso al proyecto
+- https://ezequiel-giannoni.web.app
 
 # Licencia
 
