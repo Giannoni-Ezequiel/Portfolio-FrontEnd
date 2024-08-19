@@ -3,17 +3,13 @@
 
 ## Índice
 
-- [Título e imagen de portada](#Título-e-imagen-de-portada)
-
-- [Insignias](#insignias)
-
-- [Índice](#índice)
+- [Título e imagen de portada](#titulo-e-imagen-de-portada)
 
 - [Acerca del proyecto](#acerca-del-proyecto)
 
 - [Estado del proyecto](#estado-del-proyecto)
 
-- [Características de la aplicación y demostración](#Características-de-la-aplicación-y-demostración)
+- [Características de la aplicación y demostración](#características-de-la-aplicación-y-demostración)
 
 - [Acceso al proyecto](#acceso-proyecto)
 
@@ -24,7 +20,8 @@
 - [Licencia](#licencia)
 
 - [Conclusión](#conclusión)
- # Título-e-imagen-de-portada
+
+ # Título e imagen de portada
  
 
  ![Captura de pantalla 2022-09-05 201850](https://user-images.githubusercontent.com/82993315/188520084-15c2db2d-39f5-45d9-aebe-04051ade2281.jpg)
@@ -40,14 +37,14 @@ Las tecnologias software que estoy trabajando en este proyecto son:
    <img src="https://img.shields.io/badge/STATUS-EN%20DESAROLLO-green">
    </p>
 
-# :hammer:Características-de-la-aplicación-y-demostración
+# :hammer: Características de la aplicación y demostración
 
 - `Iniciar sesión`: campos para nombre de usuario y contraseña.
 - `Navegación`: una sola página dinámica.
 - `CRUD`: (Create|Read|Update|Delete) perfil (foto, descripción), estudios, experiencia laboral, skills(logotipo,descripción), proyectos(enlaces, vista previa, galeria)
 - `Perfiles según permisos`: accesos de distintos perfiles (admin,usuario)
 
-## Tecnologías Utilizadas
+# Tecnologías Utilizadas
 
 -  Html
 -  Css
@@ -55,9 +52,10 @@ Las tecnologias software que estoy trabajando en este proyecto son:
 -  Java
 -  MySQL
 
+# Personas desarrolladores
+- Ezequiel Sebástian Giannoni
 
-## Personas desarrolladores
+# Licencia
 
-# Ezequiel Sebástian Giannoni
-
-# MD: egiannoni95@gmail.com 
+# Conclusión 
+- MD: egiannoni95@gmail.com 
