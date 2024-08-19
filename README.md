@@ -1,6 +1,6 @@
 <em> # Portafolio Demo </em>
 
-<h1 align="center"> Ezequiel S Giannoni </h1>
+<h1 align="center"> Portafolio </h1>
 
 ## Índice
 
