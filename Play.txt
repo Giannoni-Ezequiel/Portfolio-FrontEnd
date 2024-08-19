@@ -30,7 +30,9 @@ nvm version o descargar nvm : https://github.com/coreybutler/nvm-windows/release
     nvm install 20.2.0 (ultima)
     nvm use 20.2.0
     desinstalar para una anterior e instalar la version deseada
-
+Dependencias
+    chequear version
+    ng update @angular/core@18 @angular/cli@18
 Version Angular
 Ejecutar como administrador PowerShell
 npm version 
