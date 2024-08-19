@@ -37,7 +37,7 @@ Las tecnologias software que estoy trabajando en este proyecto son:
    <img src="https://img.shields.io/badge/STATUS-EN%20DESAROLLO-green">
    </p>
 
-# :hammer: Caracteristicas de la aplicacion y demostracion
+:hammer: # Caracteristicas de la aplicacion y demostracion
 
 - `Iniciar sesión`: campos para nombre de usuario y contraseña.
 - `Navegación`: una sola página dinámica.
