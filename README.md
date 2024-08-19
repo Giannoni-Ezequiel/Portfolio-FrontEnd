@@ -45,10 +45,10 @@ Las tecnologias software que estoy trabajando en este proyecto son:
 
 # :hammer:Características-de-la-aplicación-y-demostración
 
-- `Funcionalidad 1`: descripción de la funcionalidad 1
-- `Funcionalidad 2`: descripción de la funcionalidad 2
-- `Funcionalidad 2a`: descripción de la funcionalidade 2a relacionada con la funcionalidad 2
-- `Funcionalidad 3`: descripción de la funcionalidad 3
+- `Iniciar sesión`: campos para nombre de usuario y contraseña.
+- `Navegación`: una sola página dinámica.
+- `CRUD`: (Create|Read|Update|Delete) perfil (foto, descripción), estudios, experiencia laboral, skills(logotipo,descripción), proyectos(enlaces, vista previa, galeria)
+- `Perfiles según permisos`: accesos de distintos perfiles (admin,usuario)
 
 ## Tecnologías Utilizadas
 
@@ -62,6 +62,6 @@ Las tecnologias software que estoy trabajando en este proyecto son:
 
 ## Personas desarrolladores
 
-# licencia
+# Ezequiel Sebástian Giannoni
 
 # conclusión
