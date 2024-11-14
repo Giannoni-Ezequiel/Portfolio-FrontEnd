@@ -10,7 +10,7 @@ import { TokenService } from 'src/app/servicios/token.service';
   styleUrls: ['./hys.component.css']
   })
 
-export class HysComponent implements OnInit 
+export class HysComponent implements OnInit
 {
   hys: HyS[] = [];
   HyS!: HyS;
@@ -49,7 +49,6 @@ export class HysComponent implements OnInit
 
   onUpdate(): void{}
 
-  
   delete(id?: number)
   {
     if(id != undefined)

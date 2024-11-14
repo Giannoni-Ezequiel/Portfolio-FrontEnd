@@ -1,10 +1,11 @@
 <div class="row">
     <p>
-      <a class="btn btn-primary" data-bs-toggle="collapse" href="#multiCollapseExample2" role="button" aria-expanded="false" aria-controls="multiCollapseExample2">
+      <a class="btn btn-primary" data-bs-toggle="collapse" href="#multiCollapse"
+      role="button" aria-expanded="false" aria-controls="multiCollapse">
           <h2>Hard & Soft Skills</h2>
       </a>
     </p>
-    <div class="collapse multi-collapse" id="multiCollapseExample2">
+    <div class="collapse multi-collapse" id="multiCollapse">
         <div class="card card-body">
             <div class="col-lg-2">
                 <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#agregarHyS-modal" ><!--routerLink="/nuevaedu" *ngIf="isLogged"-->
@@ -29,16 +30,16 @@
                                     [outerStrokeColor]="'#39FF14'"
                                     [innerStrokeColor]="'radial-gradient'"
                                     [animation]="true"
-                                    [animationDuration]="600"   
+                                    [animationDuration]="600"
                                         >
               </circle-progress>
               <button class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#editarHyS-modal">
                 <i class="bi bi-pencil-square"></i> EDITAR</button>
               <button class="btn btn-outline-danger" (click)="delete(hys.id)">
-                <i class="bi bi-trash"></i> BORRAR </button>    
+                <i class="bi bi-trash"></i> BORRAR </button>
           </div>
      </div>
-  
+
 <div class="modal fade" id="agregarHyS-modal" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered modal-lg">
       <div class="modal-content">
@@ -71,9 +72,9 @@
       </div>
     </div>
   </div>
-  
+
   <!--EDITAR-->
-  
+
   <div class="modal fade" id="editarHyS-modal" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered modal-lg">
       <div class="modal-content">

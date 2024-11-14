@@ -9,7 +9,7 @@ import { TokenService } from '../../servicios/token.service';
   styleUrls: ['./iniciar-sesion.component.css']
 })
 
-export class IniciarSesionComponent implements OnInit 
+export class IniciarSesionComponent implements OnInit
 {
   isLogged = false;
   isLoginFail = false;
@@ -29,7 +29,7 @@ export class IniciarSesionComponent implements OnInit
   home() {
       this.router.navigate([''])
     }
-    
+
   ngOnInit() {
     if(this.tokenService.getToken())
     {
@@ -39,21 +39,21 @@ export class IniciarSesionComponent implements OnInit
       }
     }
 
-  onLogin(): void 
+  onLogin(): void
   {
       this.loginUsuario = new LoginUsuario(this.nombreUsuario, this.password);
       this.authService.login(this.loginUsuario).subscribe({
-        next: (data) => 
+        next: (data) =>
         {
           this.isLogged = true;
           this.isLoginFail = false;
-          this.tokenService.setToken(data.token);
-          this.tokenService.setUserName(data.nombreUsuario);
+          //this.tokenService.setToken(data.token); // no se manda, no recibido del back
+          //this.tokenService.setUserName(data.nombreUsuario); // no se manda, no recibido del back
           this.tokenService.setAuthorities(data.authorities);
           this.roles = data.authorities;
           this.router.navigate(['/']);
           },
-        error: (err) => 
+        error: (err) =>
         {
           this.isLogged = false;
           this.isLoginFail = true;
