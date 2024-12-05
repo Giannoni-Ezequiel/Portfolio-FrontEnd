@@ -46,11 +46,16 @@ Las tecnologias software que estoy trabajando en este proyecto son:
 
 # Tecnologias utilizadas
 
--  Html
--  Css
+-  Html5
+-  Css3
 -  Typescript
 -  Java
 -  MySQL
+-  Firebase
+-  Karma
+-  Angular
+-  NodeJs
+-  Adobe XD
 
 # Personas desarrolladores
 - Ezequiel Sebástian Giannoni
@@ -62,3 +67,7 @@ Las tecnologias software que estoy trabajando en este proyecto son:
 
 # Conclusión 
 - MD: egiannoni95@gmail.com 
+- CV: 
+<p align="left">
+   <img src="https://drive.google.com/file/d/1i-IzehLEJF0UkKZkmeTmS6EbACSLyd1l/view?usp=drive_link">
+   </p>
