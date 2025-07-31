@@ -10,15 +10,10 @@ Para actualizar el proyecto en la nube
 
 
 Warnings de actualizacion
-npm WARN deprecated popper.js@1.16.1: 
-You can find the new Popper v2 at @popperjs/core, 
-this package is dedicated to the legacy v1
+Null
 
 Estado app
-22 vulnerabilities (8 moderate, 10 high, 4 critical)
-npm audit fix
-9 vulnerabilities (5 moderate, 2 high, 2 critical)
-npm audit fix
+Ok
 
 Salir del proyecto
 ctrl + c 
@@ -39,60 +34,3 @@ npm version
 npm uninstall -g @angular/cli 
 npm cache verify 
 npm cache clean --force
-npm install -g @angular/cli17 
-npm WARN EBADENGINE Unsupported engine {
-npm WARN EBADENGINE   package: '@angular/cli@17.3.8',
-npm WARN EBADENGINE   required: {
-npm WARN EBADENGINE     npm: '^6.11.0 || ^7.5.6 || >=8.0.0',
-npm WARN EBADENGINE     node: '^18.13.0 || >=20.9.0',
-npm WARN EBADENGINE     yarn: '>= 1.13.0'
-npm WARN EBADENGINE   },
-npm WARN EBADENGINE   current: { node: 'v16.16.0', npm: '9.8.0' }
-npm WARN EBADENGINE }
-npm WARN EBADENGINE Unsupported engine {
-npm WARN EBADENGINE   package: '@angular-devkit/architect@0.1703.8',
-npm WARN EBADENGINE   required: {
-npm WARN EBADENGINE     npm: '^6.11.0 || ^7.5.6 || >=8.0.0',
-npm WARN EBADENGINE     node: '^18.13.0 || >=20.9.0',
-npm WARN EBADENGINE     yarn: '>= 1.13.0'
-npm WARN EBADENGINE   },
-npm WARN EBADENGINE   current: { node: 'v16.16.0', npm: '9.8.0' }
-npm WARN EBADENGINE }
-npm WARN EBADENGINE Unsupported engine {
-npm WARN EBADENGINE   package: '@angular-devkit/core@17.3.8',
-npm WARN EBADENGINE   required: {
-npm WARN EBADENGINE     npm: '^6.11.0 || ^7.5.6 || >=8.0.0',
-npm WARN EBADENGINE     node: '^18.13.0 || >=20.9.0',
-npm WARN EBADENGINE     yarn: '>= 1.13.0'
-npm WARN EBADENGINE   },
-npm WARN EBADENGINE   current: { node: 'v16.16.0', npm: '9.8.0' }
-npm WARN EBADENGINE }
-npm WARN EBADENGINE Unsupported engine {
-npm WARN EBADENGINE   package: '@angular-devkit/schematics@17.3.8',
-npm WARN EBADENGINE   required: {
-npm WARN EBADENGINE     npm: '^6.11.0 || ^7.5.6 || >=8.0.0',
-npm WARN EBADENGINE     node: '^18.13.0 || >=20.9.0',
-npm WARN EBADENGINE     yarn: '>= 1.13.0'
-npm WARN EBADENGINE   },
-npm WARN EBADENGINE   current: { node: 'v16.16.0', npm: '9.8.0' }
-npm WARN EBADENGINE }
-npm WARN EBADENGINE Unsupported engine {
-npm WARN EBADENGINE   package: '@schematics/angular@17.3.8',
-npm WARN EBADENGINE   required: {
-npm WARN EBADENGINE     npm: '^6.11.0 || ^7.5.6 || >=8.0.0',
-npm WARN EBADENGINE     node: '^18.13.0 || >=20.9.0',
-npm WARN EBADENGINE     yarn: '>= 1.13.0'
-npm WARN EBADENGINE   },
-npm WARN EBADENGINE   current: { node: 'v16.16.0', npm: '9.8.0' }
-npm WARN EBADENGINE }
-npm WARN EBADENGINE Unsupported engine {
-npm WARN EBADENGINE   package: 'inquirer@9.2.15',
-npm WARN EBADENGINE   required: { node: '>=18' },
-npm WARN EBADENGINE   current: { node: 'v16.16.0', npm: '9.8.0' }
-npm WARN EBADENGINE }
-npm WARN deprecated read-package-json@7.0.1: This package is no longer supported. Please use @npmcli/package-json instead.
-
-added 240 packages in 30s
-
-44 packages are looking for funding
-  run `npm fund` for details
