@@ -1,10 +1,13 @@
 {
   "hosting": {
-    "public": "dist/cv-ezequiel-sgiannoni",
+    "public": "FrontEnd/dist/cv-ezequiel-sgiannoni",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
+    ],
+    "rewrites": [
+      { "source": "**", "destination": "/index.html" }
     ]
   }
 }
