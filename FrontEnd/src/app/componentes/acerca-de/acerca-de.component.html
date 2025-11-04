@@ -6,17 +6,17 @@
       </div>
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
       <div class="center"> 
-        <img src={{personas.img}} class="img-fluid" id="fotodeperfil">
+        <img [src]="personas?.img" class="img-fluid" id="fotodeperfil">
       </div>
     </div>
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
-        <p id="nombre">{{personas.nombre}} {{personas.apellido}}</p>
-        <p id="cargo">{{personas.titulo}}</p>
+        <p id="nombre">{{personas?.nombre}} {{personas?.apellido}}</p>
+        <p id="cargo">{{personas?.titulo}}</p>
     </div>
   <div class="col-xs-12 col-sm-8 col-md-8 col-lg-3">
         <span>
             <h1>Perfil Profesional</h1>
-            <p>{{personas.sobre_mi}}</p>
+            <p>{{personas?.sobre_mi}}</p>
         </span>
     </div>
   </div>

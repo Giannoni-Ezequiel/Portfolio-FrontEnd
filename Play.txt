@@ -8,6 +8,14 @@ Para compilar el proyecto
 ctrl + s
 Para actualizar el proyecto en la nube
 
+Puerto
+chequear Puerto
+netstat -ano | findstr :4200
+matar proceso
+taskkill /PID 20404 /F
+
+Cache 
+ctrl+shift+r 
 
 Warnings de actualizacion
 Null
