@@ -1,17 +1,17 @@
 .row {
-    color: #fff;
+    color: #fcf9f9ee;
     padding: 20px;
     background: rgb(20,32,46);
-    background: radial-gradient(circle, rgba(20,32,46,1) 30%, 
-                                        rgba(10,19,52,1) 56%, 
-                                        rgba(45,67,86,1) 77%, 
+    background: radial-gradient(circle, rgba(20,32,46,1) 30%,
+                                        rgba(10,19,52,1) 56%,
+                                        rgba(45,67,86,1) 77%,
                                         rgba(137,170,195,1) 98%);
   }
 th {
-    color:rgb(247, 242, 242);
+    color: #212529;
 }
 td {
-    color: rgb(253, 253, 253);
+    color: #212529;
 }
 table{
     table-layout: fixed;
@@ -19,7 +19,7 @@ table{
 }
 
 th, td {
-    border: 1px solid blue;
+    border: 1px solid rgba(0, 0, 255, 0.63);
     width: 200px;
     word-wrap: break-word;
 }
@@ -29,9 +29,9 @@ th, td {
 
 h3, h4 {
     display: inline;
-    font-size: 2em;
+    font-size: 1.5em;
     letter-spacing: 1px;
-    color:#fff;
+    color: #14202e;
 }
 
 h2 {

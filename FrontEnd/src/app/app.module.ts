@@ -23,10 +23,11 @@ import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideStorage,getStorage } from '@angular/fire/storage';
 
+import { interceptorProvider } from './servicios/interceptor.service';
 
 @NgModule
 ({
-  declarations: 
+  declarations:
   [
     AppComponent,
     IniciarSesionComponent,
@@ -40,11 +41,11 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
     LogoAPComponent,
     AcercaDeComponent,
     ExperienciaComponent,
-    ContactoComponent, 
+    ContactoComponent,
   ],
 
-  imports: 
-  [   
+  imports:
+  [
     BrowserModule,
     NgCircleProgressModule.forRoot({}),
     AppRoutingModule,
@@ -56,7 +57,9 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
     provideStorage(() => getStorage()),
   ],
 
-  providers: [],
+  providers: [
+    interceptorProvider
+  ],
 
   bootstrap: [AppComponent]
 

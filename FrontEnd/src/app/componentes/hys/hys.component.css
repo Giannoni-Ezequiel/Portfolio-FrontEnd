@@ -15,16 +15,19 @@ td {
     width: 300px;
     height: 300px;
     background-size: cover;
-    border-radius: 50%;  
+    border-radius: 50%;
   }
 
 .div {
     text-align: center;
   }
 
-h1 {
-      display: inline;
-  }
+h1, h3 {
+    display: inline;
+    font-size: 1.5em;
+    letter-spacing: 1px;
+    color: #14202e;
+}
 
 h2 {
     font-size: 3em;

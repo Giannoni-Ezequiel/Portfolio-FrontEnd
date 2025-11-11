@@ -1,11 +1,11 @@
 <div class="row">
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
       <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editarPersona-modal">
-        Editar
+        <i class="bi bi-pencil-fill"></i>
       </button>
       </div>
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
-      <div class="center"> 
+      <div class="center">
         <img [src]="personas?.img" class="img-fluid" id="fotodeperfil">
       </div>
     </div>
@@ -20,12 +20,12 @@
         </span>
     </div>
   </div>
- 
-        
 
 
 
-<div class="modal fade" id="editarPersona-modal" tabindex="-1">
+
+
+<div class="modal fade" id="editarPersona-modal" tabindex="-1" *ngIf="personas">
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content">
       <div class="modal-header">
@@ -59,11 +59,11 @@
             <div class="imagen">
               <img [src]="imagenService.url" width="200px">
             </div>
-      </form>
-      </div>
-      <div class="modal-footer">
-        <button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <button class="btn btn-primary">Guardar</button>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              <button type="submit" class="btn btn-primary">Guardar</button>
+            </div>
+        </form>
       </div>
     </div>
   </div>

@@ -10,7 +10,7 @@
                         <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#agregarExp-modal" ><!--routerLink="/nuevaedu" *ngIf="isLogged"-->
                            + Experiencia
                         </button>
-                      
+
                     </div><br>
                     <div class="col-lg-1">
                       <div class="col-lg-11">
@@ -33,7 +33,7 @@
                                 <td>
                                     <h4>{{Experiencia.descripcion}}</h4>
                                 </td>
-                                
+
                                 <td>
                                   <h3>{{Experiencia.fecha_inicio}}</h3>
                                 </td>
@@ -43,14 +43,13 @@
                                 <td>
                                     <h3>{{Experiencia.nombreEmpresa}}</h3>
                                 </td>
-                                
+
                                 <td><!--*ngIf="isLogged"-->
                                     <button class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#editarExp-modal/:id" routerLink="/editedu/{{Experiencia.id}}">
-                                    <i class="bi bi-pencil-square"></i> EDITAR</button>
-                                </td>
-                                <td><!--*ngIf="isLogged"-->
+                                    <i class="bi bi-pencil-fill"></i></button>
+                                
                                     <button class="btn btn-outline-danger" (click)="delete(Experiencia.id)">
-                                    <i class="bi bi-trash"></i> BORRAR </button>
+                                    <i class="bi bi-x-circle-fill"></i></button>
                                 </td>
                             </tr>
                         </tbody>
@@ -151,7 +150,7 @@ AGREGAR-->
         </div>
       </div>
       <div class="modal-footer">
-        
+
       </div>
     </div>
   </div>

@@ -12,17 +12,9 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./acerca-de.component.css']
 })
 export class AcercaDeComponent implements OnInit {
-  
-  persona: Persona[] = [];
-  public editPersona: Persona | undefined;
-  public deletePersona!: Persona;
+  personas: Persona | null = null; // Usaremos esta única variable para la persona
   roles!: string[];
   isAdmin: boolean = false;
-  personas: Persona = null;
-  nombre: string = '';
-  apellido: string = '';
-  titulo: string = '';
-  sobre_mi: string = '';
 
 
   name = new FormControl('');
@@ -35,7 +27,7 @@ export class AcercaDeComponent implements OnInit {
   ){}
 
   ngOnInit(): void {
-    this.getPersonas();
+    this.cargarPersona();
     this.roles = this.tokenService.getAuthorities();
     this.roles.forEach(role => {
       if (role === 'ROLE_ADMIN') {
@@ -44,47 +36,34 @@ export class AcercaDeComponent implements OnInit {
     });
   }
 
-public getPersonas(): void{
-  this.personaService.getPersonas().subscribe((response: Persona[]) =>{
-  this.persona = response;
-  },
-  (error: HttpErrorResponse) =>{
-    alert(error.message);
+  cargarPersona(): void {
+    // Asumimos que el servicio devuelve un array, tomamos el primer elemento
+    this.personaService.getPersonas().subscribe({
+      next: (data: Persona[]) => {
+        if (data.length > 0) {
+          this.personas = data[0];
+        }
+      },
+      error: (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    });
   }
-  );
-}
-
-public onAddPersona(addForm: NgForm):void {
-  document.getElementById('add-persona-modal')?.click();
-  this.personaService.addPersona(addForm.value).subscribe(
-    (response: Persona) => {
-      console.log(response);
-      this.getPersonas();
-      addForm.reset();
-    },
-    (error: HttpErrorResponse) => {
-      alert(error.message);
-      addForm.reset();
+  onUpdate(): void {
+    if (this.personas) {
+      this.personaService.updatePersona(this.personas).subscribe(
+        (response: Persona) => {
+          console.log(response);
+          this.cargarPersona();
+          // Cierra el modal (necesitarás una referencia al modal o usar jQuery/Bootstrap)
+          document.getElementById('editarPersona-modal')?.click(); // Simula click para cerrar si usas data-bs-toggle
+        },
+        (error: HttpErrorResponse) => {
+          alert(error.message);
+        }
+      )
     }
-  )
-  
-}
-public onEditPersona(persona: Persona):void {
-  this.personaService.updatePersona(persona).subscribe(
-  (response: Persona) => {
-    console.log(response);
-    this.getPersonas();
-    
-  },
-  (error: HttpErrorResponse) => {
-    alert(error.message);
   }
-)
-
-}
-onUpdate(): void{
-  /*this.personas.img = this.imagenService.url;*/
-}
 
 uploadImage($event: any)
 {

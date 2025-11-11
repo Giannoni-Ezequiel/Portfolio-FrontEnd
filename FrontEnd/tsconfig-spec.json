@@ -3,10 +3,12 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "./out-tsc/spec",
-    "module": "commonjs",
-    "target": "es5",
     "types": [
-      "jasmine"
+      "jasmine",
+      "node"
+    ],
+    "typeRoots": [
+      "node_modules/@types"
     ]
   },
   "files": [
