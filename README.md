@@ -3,22 +3,13 @@
 
 ## Índice
 
-- [Título e imagen de portada](#titulo-e-imagen-de-portada)
-
+- [Titulo e imagen de portada](#titulo-e-imagen-de-portada)
 - [Acerca del proyecto](#acerca-del-proyecto)
-
 - [Estado del proyecto](#estado-del-proyecto)
-
-- [Características de la aplicación y demostración](#caracteristicas-de-la-aplicacion-y-demostracion)
-
+- [Tecnologias utilizadas](#tecnologias-utilizadas)
+- [Personas desarrolladores](#personas-desarrolladores)
 - [Acceso al proyecto](#acceso-al-proyecto)
-
-- [Tecnologías Utilizadas](#tecnologias-utilizadas)
-
-- [Personas Desarrolladores del Proyecto](#personas-desarrolladores)
-
 - [Licencia](#licencia)
-
 - [Conclusión](#conclusión)
 
  # Titulo e imagen de portada
@@ -61,7 +52,13 @@ Las tecnologias software que estoy trabajando en este proyecto son:
 - Ezequiel Sebástian Giannoni
 
 # Acceso al proyecto
+- REMOTO
 - https://ezequiel-giannoni.web.app
+- LOCAL
+  - FRONTEND
+    - cd FrontEnd
+    - npm install
+    - ng serve
 
 # Licencia
 

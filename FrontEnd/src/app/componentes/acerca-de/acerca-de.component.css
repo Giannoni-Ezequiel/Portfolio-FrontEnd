@@ -3,6 +3,7 @@
     padding: 20px;
     background: rgb(45,67,86);
     background: radial-gradient(circle, rgb(2, 17, 31) 0%, rgb(3, 13, 20) 100%);
+    position: relative;
 }
 th {
     color:rgb(247, 242, 242);
@@ -11,7 +12,7 @@ td {
     color: rgb(253, 253, 253);
 }
 .div{
-   
+
     text-align: center;
 }
 p {
@@ -94,4 +95,14 @@ h1 {
     #cargo {
         text-align: center;
     }
+}
+
+button[data-bs-target="#editarPersona-modal"] {
+    background-color: transparent;
+
+    --bs-btn-hover-bg: transparent;
+    --bs-btn-hover-border-color: transparent;
+    --bs-btn-active-bg: transparent;
+    --bs-btn-active-border-color: transparent;
+    --bs-btn-focus-shadow-rgb: none;
 }
