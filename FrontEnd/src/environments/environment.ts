@@ -9,7 +9,7 @@ export const environment =
     messagingSenderId: '547879620377',
     measurementId: 'G-3M6K90B856',
   },
-  production: true,
+  production: false,
   apiBaseUrl: 'http://localhost:8080', //   .localhost:8080
   //https://back-render-ptw0.onrender.com
 };
