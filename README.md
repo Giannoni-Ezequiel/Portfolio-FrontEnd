@@ -51,20 +51,22 @@ Las tecnologias software que estoy trabajando en este proyecto son:
 # Personas desarrolladores
 - Ezequiel Sebástian Giannoni
 
-# Acceso al proyecto
-- REMOTO
-- https://ezequiel-giannoni.web.app
-- LOCAL
-  - FRONTEND
-    - cd FrontEnd
-    - npm install
-    - ng serve
+## Acceso al Proyecto
+
+### Despliegue (Producción)
+El proyecto está desplegado en: https://ezequiel-giannoni.web.app
+
+### Desarrollo Local
+1.  Navegar a la carpeta del frontend: `cd FrontEnd`
+2.  Instalar dependencias: `npm install`
+3.  Iniciar el servidor de desarrollo: `ng serve`
+
+### Proceso de Despliegue
+1.  Construir la aplicación para producción: `ng build` (dentro de la carpeta `FrontEnd`)
+2.  Desplegar a Firebase: `firebase deploy` (desde la raíz del proyecto)
 
 # Licencia
 
 # Conclusión 
 - MD: egiannoni95@gmail.com 
-- CV: 
-<p align="left">
-   <img src="https://drive.google.com/file/d/1i-IzehLEJF0UkKZkmeTmS6EbACSLyd1l/view?usp=drive_link">
-   </p>
+- CV: Ver CV
