@@ -18,15 +18,15 @@ export class ExperienciaComponent implements OnInit {
   fecha_inicio: string = '';
   fecha_fin: string = '';
   descripcion: string = '';
-  
+
   constructor(private experienciaS: ExperienciaService,
-              private activatedRouter: ActivatedRoute, 
+              private activatedRouter: ActivatedRoute,
               private tokenService: TokenService,
               private router: Router) { }
-  
+
   isLogged = false;
-  
-  ngOnInit(): void 
+
+  ngOnInit(): void
   {
     this.cargarExperiencia();
     if(this.tokenService.getToken()){
@@ -34,10 +34,10 @@ export class ExperienciaComponent implements OnInit {
       } else {
       this.isLogged = false;
       }
-    
-    
+
+
   }
-  
+
   cargarExperiencia(): void
   {
     this.experienciaS.lista().subscribe
@@ -60,8 +60,7 @@ export class ExperienciaComponent implements OnInit {
     alert("Error");
     })}
 
-  cargarDetalle(): void{
-    const id = this.activatedRouter.snapshot.params['id'];
+  cargarDetalle(id: number): void{
     this.experienciaS.detail(id).subscribe(
       data => {
         this.experiencias = data;
@@ -73,16 +72,19 @@ export class ExperienciaComponent implements OnInit {
 
   onUpdate(): void
   {
-    this.cargarDetalle();
-    const id = this.activatedRouter.snapshot.params['id'];
-    this.experienciaS.update(id, this.experiencias).subscribe(data => {
-      this.router.navigate(['']);
+    // El ID para la actualización debe provenir del objeto 'experiencias' mismo,
+    // que fue poblado cuando se llamó a 'cargarDetalle' al abrir el modal.
+    // La llamada anterior a 'this.cargarDetalle();' era incorrecta y causaba el error.
+    this.experienciaS.update(this.experiencias.id, this.experiencias).subscribe(data => {
+      alert("Experiencia actualizada"); // Agregado un mensaje de éxito
+      this.cargarExperiencia(); // Recarga la lista para reflejar los cambios
+      // this.router.navigate(['']); // No es necesario navegar si solo se actualiza un modal
     }, err => {
       alert("Error al modificar experiencia");
         }
       )
   }
-  
+
 
   delete(id?: number)
   {

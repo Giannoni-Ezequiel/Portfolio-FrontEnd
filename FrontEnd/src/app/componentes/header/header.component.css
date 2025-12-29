@@ -1,8 +1,16 @@
 .row {
-    background: black
-        }
-    
-app-logo {
-    float: right;
-    margin-top: 25px;
-        }
+    background: black;
+    padding: 1rem 0;
+}
+
+.login {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+}
+
+.login img {
+    width: 40px;
+    height: 40px;
+}

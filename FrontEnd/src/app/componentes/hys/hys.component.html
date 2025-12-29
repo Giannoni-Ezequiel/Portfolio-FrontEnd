@@ -1,11 +1,10 @@
 <div class="row">
     <p>
-      <a class="btn btn-primary" data-bs-toggle="collapse" href="#multiCollapse"
-      role="button" aria-expanded="false" aria-controls="multiCollapse">
+      <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#hysCollapse" aria-expanded="false" aria-controls="hysCollapse">
           <h2>Hard & Soft Skills</h2>
-      </a>
+      </button>
     </p>
-    <div class="collapse multi-collapse" id="multiCollapse">
+    <div class="collapse" id="hysCollapse">
         <div class="card card-body">
             <div class="col-lg-2">
                 <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#agregarHyS-modal" ><!--routerLink="/nuevaedu" *ngIf="isLogged"-->
@@ -52,22 +51,22 @@
         <div class="modal-body">
           <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
               <div class="form-group">
-                <label for="nombre">Nombre:</label>
-                <input [(ngModel)]="nombre" name="nombre" type="text" class="form-control">
+                <label for="add-hys-nombre">Nombre:</label>
+                <input [(ngModel)]="nombre" name="nombre" type="text" class="form-control" id="add-hys-nombre">
               </div>
               <div class="form-group">
-                  <label for="porcentaje">Porcentaje:</label>
-                  <input [(ngModel)]="porcentaje" name="porcentaje" type="text" class="form-control">
+                  <label for="add-hys-porcentaje">Porcentaje:</label>
+                  <input [(ngModel)]="porcentaje" name="porcentaje" type="text" class="form-control" id="add-hys-porcentaje">
               </div>
               <div class="form-group">
-                  <label for="img">Img:</label>
-                  <input [(ngModel)]="img" name="img" type="text" class="form-control">
+                  <label for="add-hys-img">Img:</label>
+                  <input [(ngModel)]="img" name="img" type="text" class="form-control" id="add-hys-img">
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-primary">Guardar</button>
               </div>
           </form>
-        </div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-          <button class="btn btn-primary">Guardar</button>
         </div>
       </div>
     </div>
@@ -89,25 +88,25 @@
             <div class="row">
           <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
               <div class="form-group">
-                  <label for="nombre">nombre:</label>
-                  <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="HyS.nombre" required>
+                  <label for="edit-hys-nombre">nombre:</label>
+                  <input type="text" class="form-control" id="edit-hys-nombre" name="nombre" [(ngModel)]="HyS.nombre" required>
               </div>
               <div class="form-group">
-                <label for="porcentaje">porcentaje:</label>
-                <input type="text" class="form-control" id="porcentaje" name="porcentaje" [(ngModel)]="HyS.porcentaje" required>
+                <label for="edit-hys-porcentaje">porcentaje:</label>
+                <input type="text" class="form-control" id="edit-hys-porcentaje" name="porcentaje" [(ngModel)]="HyS.porcentaje" required>
               </div>
               <div class="form-group">
-                  <label for="img">img:</label>
-                  <input type="text" class="form-control" id="img" name="img" [(ngModel)]="HyS.img" required>
+                  <label for="edit-hys-img">img:</label>
+                  <input type="text" class="form-control" id="edit-hys-img" name="img" [(ngModel)]="HyS.img" required>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
                 </div>
           </form>
         </div>
       </div>
     </div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-          <button class="btn btn-primary">Guardar</button>
-        </div>
       </div>
     </div>
-  </div>
+</div>

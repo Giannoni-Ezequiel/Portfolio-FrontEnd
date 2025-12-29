@@ -1,10 +1,10 @@
 <div class="row">
     <p>
-      <a class="btn btn-primary" name="collapse" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
+      <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#educacionCollapse" aria-expanded="false" aria-controls="educacionCollapse">
           <h2>Educacion</h2>
-      </a>
+      </button>
     </p>
-  <div class="collapse multi-collapse" id="multiCollapseExample1">
+  <div class="collapse" id="educacionCollapse">
       <div class="card card-body">
           <div class="col-lg-2">
             <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#agregarEdu-modal" routerLink="/nuevaedu"><!--*ngIf="isLogged"-->
@@ -46,9 +46,9 @@
                         <p>{{Educacion.descripcion}}</p>
                       </td>
                       <td><!-- *ngIf="isLogged"-->
-                        <button class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#editarEdu-modal/:id" (click)="cargarDetalle(Educacion.id)">
+                        <button class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#editarEdu-modal" (click)="cargarDetalle(Educacion.id)">
                         <i class="bi bi-pencil-fill"></i></button>
-                      
+
                         <button class="btn btn-outline-danger" (click)="delete(Educacion.id)">
                         <i class="bi bi-x-circle-fill"></i></button>
                       </td>
@@ -69,34 +69,34 @@
         </button>
       </div>
       <div class="modal-body">
-        <form>
+        <form (ngSubmit)="onCreate()" #f="ngForm" novalidate>
             <div class="form-group">
-              <div class="form-group">
-              <label for="titulo">Titulo:</label>
-              <input type="text" class="form-control" id="titulo" name="titulo" [(ngModel)]="titulo" required>
-              </div>
-                <label for="nombre">Nombre:</label>
-                <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="nombre" required>
-              </div>
-              <div class="form-group">
-                <label for="fecha_inicio">Fecha Inicio:</label>
-                <input [(ngModel)]="fecha_inicio" name="fecha_inicio" type="text" class="form-control">
-              </div>
-              <div class="form-group">
-                <label for="fecha_fin">Fecha Fin:</label>
-                <input [(ngModel)]="fecha_fin" name="fecha_fin" type="text" class="form-control">
-              </div>
-              <div class="form-group">
-                <label for="img">Img:</label>
-                <input [(ngModel)]="img" name="img" type="text" class="form-control">
-              </div>
-              <div class="form-group">
-                <label for="descripcion">Descripción:</label>
-                <input [(ngModel)]="descripcion" name="descripcion" type="text" class="form-control">
+              <label for="add-edu-titulo">Titulo:</label>
+              <input type="text" class="form-control" id="add-edu-titulo" name="titulo" [(ngModel)]="titulo" required>
+            </div>
+            <div class="form-group">
+                <label for="add-edu-nombre">Nombre:</label>
+                <input type="text" class="form-control" id="add-edu-nombre" name="nombre" [(ngModel)]="nombre" required>
+            </div>
+            <div class="form-group">
+              <label for="add-edu-fecha_inicio">Fecha Inicio:</label>
+              <input [(ngModel)]="fecha_inicio" name="fecha_inicio" type="text" class="form-control" id="add-edu-fecha_inicio">
+            </div>
+            <div class="form-group">
+              <label for="add-edu-fecha_fin">Fecha Fin:</label>
+              <input [(ngModel)]="fecha_fin" name="fecha_fin" type="text" class="form-control" id="add-edu-fecha_fin">
+            </div>
+            <div class="form-group">
+              <label for="add-edu-img">Img:</label>
+              <input [(ngModel)]="img" name="img" type="text" class="form-control" id="add-edu-img">
+            </div>
+            <div class="form-group">
+              <label for="add-edu-descripcion">Descripción:</label>
+              <input [(ngModel)]="descripcion" name="descripcion" type="text" class="form-control" id="add-edu-descripcion">
             </div>
             <div class="modal-footer">
               <button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-              <button class="btn btn-primary" (click)="onCreate()">Guardar</button>
+              <button type="submit" class="btn btn-primary">Guardar</button>
             </div>
         </form>
       </div>
@@ -120,28 +120,28 @@
           <div class="row">
         <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
             <div class="form-group">
-                <label for="titulo">Titulo:</label>
-                <input type="text" class="form-control" id="titulo" name="titulo" [(ngModel)]="educaciones.titulo" required>
+                <label for="edit-edu-titulo">Titulo:</label>
+                <input type="text" class="form-control" id="edit-edu-titulo" name="titulo" [(ngModel)]="educaciones.titulo" required>
               </div>
               <div class="form-group">
-                <label for="nombre">Nombre:</label>
-                <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="educaciones.nombre" required>
+                <label for="edit-edu-nombre">Nombre:</label>
+                <input type="text" class="form-control" id="edit-edu-nombre" name="nombre" [(ngModel)]="educaciones.nombre" required>
             </div>
             <div class="form-group">
-                <label for="fecha_inicio">Fecha de Inicio:</label>
-                <input type="text" class="form-control" id="fecha_inicio" name="fecha_inicio" [(ngModel)]="educaciones.fecha_inicio" required>
+                <label for="edit-edu-fecha_inicio">Fecha de Inicio:</label>
+                <input type="text" class="form-control" id="edit-edu-fecha_inicio" name="fecha_inicio" [(ngModel)]="educaciones.fecha_inicio" required>
               </div>
               <div class="form-group">
-                <label for="fecha_fin">Fecha Fin:</label>
-                <input type="text" class="form-control" id="fecha_fin" name="fecha_fin" [(ngModel)]="educaciones.fecha_fin" required>
+                <label for="edit-edu-fecha_fin">Fecha Fin:</label>
+                <input type="text" class="form-control" id="edit-edu-fecha_fin" name="fecha_fin" [(ngModel)]="educaciones.fecha_fin" required>
               </div>
               <div class="form-group">
-                <label for="img">Img:</label>
-                <input type="text" class="form-control" id="img" name="img" [(ngModel)]="educaciones.img" required>
+                <label for="edit-edu-img">Img:</label>
+                <input type="text" class="form-control" id="edit-edu-img" name="img" [(ngModel)]="educaciones.img" required>
               </div>
               <div class="form-group">
-                <label for="descripcion">Descripcion:</label>
-                <input type="text" class="form-control" id="descripcion" name="descripcion" [(ngModel)]="educaciones.descripcion" required>
+                <label for="edit-edu-descripcion">Descripcion:</label>
+                <input type="text" class="form-control" id="edit-edu-descripcion" name="descripcion" [(ngModel)]="educaciones.descripcion" required>
               </div>
               <div class="form-group">
               <button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>

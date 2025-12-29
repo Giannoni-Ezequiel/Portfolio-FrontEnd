@@ -7,11 +7,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-educacion',
   templateUrl: './educacion.component.html',
-  styleUrls: ['./educacion.component.css'],
-  providers: [EducacionService]
+  styleUrls: ['./educacion.component.css']
 })
 export class EducacionComponent implements OnInit {
-  
+
   educacion: Educacion[];
   educaciones: Educacion = null;
   nombre: string = '';
@@ -20,15 +19,15 @@ export class EducacionComponent implements OnInit {
   titulo: string;
   img: string = '';
   descripcion: string = '';
-  
+
   constructor(private educacionS: EducacionService,
-              private activatedRouter: ActivatedRoute,   
+              private activatedRouter: ActivatedRoute,
               private tokenService: TokenService,
               private router: Router) { }
-  
+
   isLogged = false;
 
-  ngOnInit(): void 
+  ngOnInit(): void
   {
     this.cargarEducacion();
     if(this.tokenService.getToken()){
@@ -37,7 +36,7 @@ export class EducacionComponent implements OnInit {
       this.isLogged = false;
       }
     }
-  
+
   cargarEducacion(): void
   {
     this.educacionS.lista().subscribe
@@ -50,7 +49,7 @@ export class EducacionComponent implements OnInit {
     }
 
   onCreate(): void{
-      const expe = new Educacion(this.titulo,this.nombre, this.fecha_inicio, this.fecha_fin, 
+      const expe = new Educacion(this.titulo,this.nombre, this.fecha_inicio, this.fecha_fin,
         this.img, this.descripcion);
         this.educacionS.save(expe).subscribe(data =>{
           alert("Se agrego Educacion");
@@ -63,25 +62,25 @@ export class EducacionComponent implements OnInit {
     console.log(id);
   }
 
-  cargarDetalle(id: number) 
+  cargarDetalle(id: number)
   {
-        id = this.activatedRouter.snapshot.params['id'];
         this.educacionS.detail(id).subscribe(
           data => {
             this.educaciones = data;
           }, err => {
             alert("Error al modificar educacion");
-            this.router.navigate(['']);
           })
       }
-  
+
   onUpdate(): void
   {
-    
-    const id = this.activatedRouter.snapshot.params['id'];
-    this.cargarDetalle(id);
-    this.educacionS.update(id, this.educaciones).subscribe(data => {
-      this.router.navigate(['']);
+    // El ID para la actualización debe provenir del objeto 'educaciones' mismo,
+    // que fue poblado cuando se llamó a 'cargarDetalle' al abrir el modal.
+    // La llamada anterior a 'this.cargarDetalle();' era incorrecta.
+    this.educacionS.update(this.educaciones.id, this.educaciones).subscribe(data => {
+      alert("Educación actualizada");
+      this.cargarEducacion(); // Recarga la lista para reflejar los cambios
+      // No es necesario navegar si solo se actualiza un modal
     }, err => {
       alert("Error al modificar educacion");
         }
